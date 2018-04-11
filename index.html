@@ -30,8 +30,108 @@
 		</div>
 		<div id="book">
 			<div class="chapter">
-				<h2 id="chapter-0">Chapter 0</h2>
+				<h2 id="introduction">Introduction</h2>
+<p>Welcome to Global Azure Bootcamp 2018! All around the world user groups and communities want to learn about Azure and Cloud Computing! On April 22, 2017, all communities will come together once again in the fifth great Global Azure Bootcamp 2018 event! Each user group will organize their own one day deep dive class on Azure the way they see fit and how it works for their members. The result is that thousands of people get to learn about Azure and join together online under the social hashtag #GlobalAzure! Join hundreds of other organizers to help out and be part of the experience! </p>
+<h3 id="about-the-2018-louisville-global-azure-bootcamp">About the 2018 Louisville Global Azure Bootcamp</h3>
+<p>The 2018 Louisville Global Azure Bootcamp is a free one-day global training event on Azure, from the community to the community. See our event <a href="http://louisville.azurebootcamp.net/">home page</a> for more details. </p>
+<p>This years format will be a blend of brief presentations, followed by hands-on and guided labs. </p>
+<p>Our speakers include:</p>
+<ul>
+<li><a href="https://twitter.com/chadgreen">Chad Green</a><ul>
+<li><a href="http://phrehab.com/">ProgressiveHealth</a></li>
+<li><a href="http://www.codepalousa.com/">CodePaLOUsa</a></li>
+<li><a href="http://www.chadgreen.com/">ChadGreen.com</a></li>
+</ul>
+</li>
+<li><a href="https://twitter.com/mikebranstein">Mike Branstein</a><ul>
+<li><a href="http://kizan.com">KiZAN Technologies</a></li>
+<li><a href="https://brosteins.com">Brosteins</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="getting-started">Getting Started</h3>
+<p>To get started you&#39;ll need the following pre-requisites. Please take a few moments to ensure everything is installed and configured.</p>
+<ul>
+<li>Microsoft Windows PC</li>
+<li><a href="https://www.visualstudio.com">Visual Studio</a> 2017 or later</li>
+<li><a href="https://azure.microsoft.com">Azure Subscription</a> (Trial is ok, or an Azure account linked to a Visual Studio subscription or MSDN account. See later sections of this chapter to create a free trial account or activate your Visual Studio subscription)</li>
+<li><a href="https://azure.microsoft.com/en-us/downloads/">Azure SDK for .NET</a> installed (be sure to get the right one for your version of Visual Studio)</li>
+<li><a href="http://storageexplorer.com/">Storage Explorer</a> installed</li>
+<li><a href="https://go.microsoft.com/fwlink/?LinkId=717179&amp;clcid=0x409">Storage Emulator</a> installed</li>
+<li>The <a href="https://github.com/mikebranstein/global-azure-bootcamp-2018/tree/start">starter project</a> on Github</li>
+</ul>
+<h3 id="what-you-re-building">What You&#39;re Building</h3>
+<p>Azure is big. Really big. Too big to talk about all things Azure in a single day. </p>
+<p>We&#39;ve assembled an exciting workshop to introduce you to several Azure services that cloud developers should know about:</p>
+<ul>
+<li><a href="https://azure.microsoft.com/en-us/services/app-service/web/">Web app</a></li>
+<li><a href="https://www.microsoft.com/cognitive-services">Cognitive Services</a> API for <a href="https://azure.microsoft.com/en-us/services/cognitive-services/custom-speech-service/">customized speech to text</a></li>
+<li><a href="https://www.microsoft.com/cognitive-services">Cognitive Services</a> API for <a href="https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/">Language Understanding (LUIS)</a></li>
+</ul>
+<p>In this year’s Global Azure Bootcamp, you’ll learn how to integrate Azure’s customizable speech recognition, text analytics, and intent analysis APIs into an Azure-hosted app. You’ll start by learning about the Custom Speech Service, a speech recognition API that can be trained to filter out background noise and recognize obscure words and phrases. After training the speech recognition model, you’ll integrate it into an Azure-hosted web app to recognize real-time speech. Finally, you’ll integrate and train the Language Understanding and Intelligence Service (LUIS) to analyze the intent of speech phrases you generate. With the intent identified, your app will be able to respond in real time.</p>
+<h4 id="key-concepts-and-takeaways">Key concepts and takeaways</h4>
+<ul>
+<li>Navigating the Azure portal</li>
+<li>Using Azure Resource Groups to manage multiple Azure services</li>
+<li>Deploying a web app to Azure web app service</li>
+<li>Developing language and acoustic models for the Custom Speech Service</li>
+<li>Deploying a customized speech recognition API</li>
+<li>Developing intent models for the Language Understanding (LUIS) service</li>
+<li>Deploying a customized LUIS endpoint</li>
+<li>Integrating speech recognition and intent analysis into an application</li>
+</ul>
+<h3 id="materials">Materials</h3>
+<p>You can find additional lab materials and presentation content at the locations below:</p>
+<ul>
+<li>Presentation: <a href="https://github.com/mikebranstein/global-azure-bootcamp-2018">https://github.com/mikebranstein/global-azure-bootcamp-2018</a></li>
+<li>Source code for the code used in this guide: <a href="https://github.com/mikebranstein/global-azure-bootcamp-2018">https://github.com/mikebranstein/global-azure-bootcamp-2018</a></li>
+<li>This guide: <a href="https://github.com/mikebranstein/global-azure-bootcamp-2018-instructions/">https://github.com/mikebranstein/global-azure-bootcamp-2018-instructions</a></li>
+</ul>
+<h3 id="creating-a-trial-azure-subscription">Creating a Trial Azure Subscription</h3>
+<blockquote>
+<p><strong>NOTE:</strong> If you have an Azure account already, you can skip this section. If you have a Visual Studio subscription (formerly known as an MSDN account), you get free Azure dollars every month. Check out the next section for activating these benefits.</p>
+</blockquote>
+<p>There are several ways to get an Azure subscription, such as the free trial subscription, the pay-as-you-go subscription, which has no minimums or commitments and you can cancel any time; Enterprise agreement subscriptions, or you can buy one from a Microsoft retailer. In exercise, you&#39;ll create a free trial subscription.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Create a Free Trial Subscription
+</h4>
 
+<p>Browse to the following page <a href="http://azure.microsoft.com/en-us/pricing/free-trial/">http://azure.microsoft.com/en-us/pricing/free-trial/</a> to obtain a free trial account.</p>
+<p>Click <em>Start free</em>.</p>
+<p>Enter the credentials for the Microsoft account that you want to use. You will be redirected to the Sign up page.</p>
+<blockquote>
+<p><strong>NOTE:</strong> Some of the following sections could be omitted in the Sign up process, if you recently verified your Microsoft account.</p>
+</blockquote>
+<p>Enter your personal information in the About you section. If you have previously loaded this info in your Microsoft Account, it will be automatically populated.</p>
+<p><img src="images/chapter0/sign-up.png" class="img-medium" /></p>
+<p>In the <em>Verify by phone</em> section, enter your mobile phone number, and click <em>Send text message</em>.</p>
+<p><img src="images/chapter0/send-text-message.png" class="img-medium" /></p>
+<p>When you receive the verification code, enter it in the corresponding box, and click <em>Verify code</em>.</p>
+<p><img src="images/chapter0/verify-code.png" class="img-medium" /></p>
+<p>After a few seconds, the <em>Verification by card</em> section will refresh. Fill in the Payment information form. </p>
+<blockquote>
+<p><strong>NOTE:</strong> Your credit card will not be billed, unless you remove the spending limits. If you run out of credit, your services will be shut down unless you choose to be billed.</p>
+</blockquote>
+<p><img src="images/chapter0/verify-by-card.png" class="img-medium" /></p>
+<p>In the <em>Agreement</em> section, check the <em>I agree to the subscription Agreement</em>, <em>offer details</em>, and <em>privacy statement</em> option, and click <em>Sign up</em>.</p>
+<p>Your free subscription will be set up, and after a while, you can start using it. Notice that you will be informed when the subscription expires.</p>
+<p><img src="images/chapter0/agreement.png" class="img-medium" /></p>
+<p>Your free trial will expire in 29 days from it&#39;s creation.</p>
+<p><img src="images/chapter0/expiration.png" class="img-medium" /></p>
+<div class="exercise-end"></div>
+
+<h3 id="activating-visual-studio-subscription-benefits">Activating Visual Studio Subscription Benefits</h3>
+<p>If you happen to be a Visual Studio subscriber (formerly known as MSDN) you can activate your Azure Visual Studio subscription benefits. It is no charge, you can use your MSDN software in the cloud, and most importantly you get up to $150 in Azure credits every month. You can also get 33% discount in Virtual Machines and much more.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Activate Visual Studio Subscription Benefits
+</h4>
+
+<p>To active the Visual Studio subscription benefits, browse to the following URL: <a href="http://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/">http://azure.microsoft.com/en-us/pricing/member-offers/msdn-benefits-details/</a></p>
+<p>Scroll down to see the full list of benefits you will get for being a MSDN member. There is even a FAQ section you can read.</p>
+<p>Click <em>Activate</em> to activate the benefits.</p>
+<p><img src="images/chapter0/activate.png" class="img-medium" /></p>
+<p>You will need to enter your Microsoft account credentials to verify the subscription and complete the activation steps.</p>
+<div class="exercise-end"></div>
 			</div>
 			<hr>
 
