@@ -165,7 +165,7 @@ Clone or download the `master` branch from [https://github.com/mikebranstein/glo
 
 Use this [link](https://github.com/mikebranstein/global-azure-bootcamp-2018/archive/master.zip) to download a zip file of the `master` branch.
 
-![image](images/chapter1/downloaded-zip.png)
+<img src="images/chapter1/downloaded-zip.png" class="img-override" />
 
 > **Unblock the .zip file!** 
 >
@@ -173,7 +173,7 @@ Use this [link](https://github.com/mikebranstein/global-azure-bootcamp-2018/arch
 
 If you're running Windows, right-click the zip file and go to the properties option. Check the *Unblock* option, press *Apply*, press *Ok*.
 
-![image](images/chapter1/unblock.gif)
+<img src="images/chapter1/unblock.gif" class="img-override" />
 
 Now it's safe to unzip the file. 
 
@@ -187,7 +187,7 @@ Now it's safe to unzip the file.
 
 Open the solution in Visual Studio by double-clicking the `Web.sln` file in the *web* folder of the extracted files:
 
-![image](images/chapter1/solution-file.png)
+<img src="images/chapter1/solution-file.png" class="img-override" />
 
 > **Logging into Visual Studio the first time**
 >
@@ -195,11 +195,11 @@ Open the solution in Visual Studio by double-clicking the `Web.sln` file in the 
 
 The opened solution should look like this:
 
-![image](images/chapter1/opened-solution.png)
+<img src="images/chapter1/opened-solution.png" class="img-override" />
 
 Build and debug the solution. You should see the Speech Recognition site load in your browser.
 
-![image](images/chapter1/site.png)
+<img src="images/chapter1/site.png" class="img-override" />
 
 This concludes the exercise.
 
