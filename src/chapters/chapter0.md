@@ -25,10 +25,6 @@ To get started you'll need the following pre-requisites. Please take a few momen
 * Microsoft Windows PC
 * [Visual Studio](https://www.visualstudio.com) 2017 or later
 * [Azure Subscription](https://azure.microsoft.com) (Trial is ok, or an Azure account linked to a Visual Studio subscription or MSDN account. See later sections of this chapter to create a free trial account or activate your Visual Studio subscription)
-* [Azure SDK for .NET](https://azure.microsoft.com/en-us/downloads/) installed (be sure to get the right one for your version of Visual Studio)
-* [Storage Explorer](http://storageexplorer.com/) installed
-* [Storage Emulator](https://go.microsoft.com/fwlink/?LinkId=717179&clcid=0x409) installed
-* The [starter project](https://github.com/mikebranstein/global-azure-bootcamp-2018/tree/start) on Github
 
 ### What You're Building
 
@@ -62,7 +58,9 @@ You can find additional lab materials and presentation content at the locations 
 
 ### Creating a Trial Azure Subscription
 
-> **NOTE:** If you have an Azure account already, you can skip this section. If you have a Visual Studio subscription (formerly known as an MSDN account), you get free Azure dollars every month. Check out the next section for activating these benefits.
+> **If you already have an Azure account** 
+>
+> If you have an Azure account already, you can skip this section. If you have a Visual Studio subscription (formerly known as an MSDN account), you get free Azure dollars every month. Check out the next section for activating these benefits.
 
 There are several ways to get an Azure subscription, such as the free trial subscription, the pay-as-you-go subscription, which has no minimums or commitments and you can cancel any time; Enterprise agreement subscriptions, or you can buy one from a Microsoft retailer. In exercise, you'll create a free trial subscription.
 
@@ -76,7 +74,9 @@ Click *Start free*.
 
 Enter the credentials for the Microsoft account that you want to use. You will be redirected to the Sign up page.
 
-> **NOTE:** Some of the following sections could be omitted in the Sign up process, if you recently verified your Microsoft account.
+> **Note** 
+>
+> Some of the following sections could be omitted in the Sign up process, if you recently verified your Microsoft account.
 
 Enter your personal information in the About you section. If you have previously loaded this info in your Microsoft Account, it will be automatically populated.
 
@@ -92,7 +92,9 @@ When you receive the verification code, enter it in the corresponding box, and c
 
 After a few seconds, the *Verification by card* section will refresh. Fill in the Payment information form. 
 
-> **NOTE:** Your credit card will not be billed, unless you remove the spending limits. If you run out of credit, your services will be shut down unless you choose to be billed.
+> **A Note about your Credit Card** 
+>
+> Your credit card will not be billed, unless you remove the spending limits. If you run out of credit, your services will be shut down unless you choose to be billed.
 
 <img src="images/chapter0/verify-by-card.png" class="img-medium" />
 
@@ -127,3 +129,69 @@ Click *Activate* to activate the benefits.
 You will need to enter your Microsoft account credentials to verify the subscription and complete the activation steps.
 
 <div class="exercise-end"></div>
+
+### Preparing your Azure environment
+
+You might be wondering how you can participate in a cloud development workshop and not need Visual Studio installed. Am I right? 
+
+Thanks to the Azure Resource Manager and some nifty templates I put together, we're going to provision a virtual machine (VM) with Visual Studio installed in your Azure subscription. From that point forward, you can work from the VM. 
+
+It takes about 10 minutes to get the VM deployed to your subscription, so let's get started!
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Provisioning a Visual Studio Community VM in your Azure Subscription
+</h4>
+
+Start by clicking the *Deploy to Azure* button below.
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fmikebranstein%2Fvscommunity-workshop-vm%2Fmaster%2Ftemplate.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png" class="img-override" /></a>
+
+This opens the Azure portal in a new tab of your browser. If you're prompted to sign in, do so. 
+
+When the page loads, you'll see this custom deployment page:
+
+<img src="images/chapter0/custom-deployment.png" class="img-override" />
+
+#### Under *Basics*, select/enter the following
+- Subscription: *your Azure subscription*
+- Resource group: *Create new*
+- Resource group name: *workshop-vm*, or some other name that's easy to remember
+- Location: *East US*
+
+> **Resource Groups** 
+>
+> Formally, resource groups provide a way to monitor, control access, provision and manage billing for collections of assets that are required to run an application, or used by a client or company department. Informally, think of resource groups like a file system folder, but instead of holding files and other folders, resource groups hold azure objects like storage accounts, web apps, functions, etc.
+
+#### Under *Settings*, enter
+- Virtual Machine Name: *workshop-vm*, or some other name that is less than 15 characters long, and no special characters
+- Admin Username: *your first name*, or some other username without spaces
+- Admin Password: *P@ssW0rd1234*, or another 12-character password with upper, lower, numbers, and a special character 
+
+> **WARNING** 
+>
+> Do not forget your username and password. Write it down for today. 
+
+#### Approving the "Purchase"
+
+Scroll down to the bottom of the page and click two boxes:
+1. I agree to the terms and conditions stated above
+2. Pin to dashboard
+
+Press the *Purchase* button.
+
+#### Deploying the VM
+
+After a few moments, the deployment of your VM will begin, and you'll see a status notification in the upper right:
+
+<img src="images/chapter0/deployment-start1.png" class="img-override" />
+
+...and a deployment tile on your dashboard:
+
+<img src="images/chapter0/deployment-start2.png" class="img-override" />
+
+Now, wait for about 10 minutes and your virtual machine will be deployed and ready to use.
+
+<div class="exercise-end"></div>
+
+That's it for the pre-requisites for today's workshop. Wait until your VM is created, and we'll be getting started soon!
+
