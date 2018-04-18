@@ -127,9 +127,21 @@ If you're prompted by a security message, respond *Yes*:
 
 You're now connected to your VM. 
 
-> ** Download additional software **
+> **Download additional software**
 >
 > If you're like me, you have a standard toolset you like to use. Please, download software for your VM and don't forget your browser of choice, Notepad++, Visual Studio Code, etc.
+
+#### Get a real browser!
+
+> **Download Chrome/Firefox/Edge**
+>
+> It's important that you download an evergreen browser on your virtual machine, because the version of Internet Explorer installed on the VM is not compatible with some of the JavaScript we have in this workshop.  
+
+Before you can download files through Internet Explorer, you need to enable downloads. Go to Tools -> Internet Settings -> Security -> Internet -> Custom Level. Find Downloads -> File download, then select Enabled. Close Internet Explorer, then re-open.
+
+<img src="images/chapter1/enable-downloads.gif" class="img-override" />
+
+Now, you can download your favorite browser. And don't forget to set it as your default. Don't use IE.
 
 This concludes the exercise.
 
@@ -188,6 +200,8 @@ The opened solution should look like this:
 Build and debug the solution. You should see the Speech Recognition site load in your browser.
 
 ![image](images/chapter1/site.png)
+
+This concludes the exercise.
 
 <div class="exercise-end"></div>
 
