@@ -1,4 +1,4 @@
-## Getting project from Github
+## Getting started in Azure
 
 All the code you'll need for working through the workshop are stored on Github at [https://github.com/mikebranstein/global-azure-bootcamp-2018](https://github.com/mikebranstein/global-azure-bootcamp-2018).
 
