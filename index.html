@@ -331,8 +331,62 @@
 <div class="exercise-end"></div>
 
 <p>That&#39;s it! You&#39;re up and running and ready to move on! In the next section, you&#39;ll learn how to deploy your website to Azure.</p>
-<h3 id="deploying-the-web-site-to-azure">Deploying the Web Site to Azure</h3>
+<h3 id="understanding-app-service-and-web-apps">Understanding App Service and Web Apps</h3>
+<p>In the last part of this chapter, you&#39;ll learn how to create an Azure Web App and deploy the Speech Service website to the cloud. In short, I like to think of Azure Web Apps like IIS in the cloud, but without the pomp and circumstance of setting up and configuring IIS.</p>
+<p>Web Apps are also part of a larger Azure service called the App Service, which is focused on helping you to build highly-scalable cloud apps focused on the web (via Web Apps), mobile (via Mobile Apps), APIs (via API Apps), and automated business processes (via Logic Apps). </p>
+<p>We don&#39;t have time to fully explore all of the components of the Azure App Service, so if you&#39;re interested, you can read more <a href="https://azure.microsoft.com/en-us/services/app-service/">online</a>.</p>
+<h4 id="what-is-an-azure-web-app-">What is an Azure Web App?</h4>
+<p>As we&#39;ve mentioned, Web Apps are like IIS in the cloud, but calling it that seems a bit unfair because there&#39;s quite a bit more to  Web Apps:</p>
+<ul>
+<li><p><strong>Websites and Web Apps:</strong> Web Apps let developers rapidly build, deploy, and manage powerful websites and web apps. Build standards-based web apps and APIs using .NET, Node.js, PHP, Python, and Java. Deliver both web and mobile apps for employees or customers using a single back end. Securely deliver APIs that enable additional apps and devices.</p>
+</li>
+<li><p><strong>Familiar and fast:</strong> Use your existing skills to code in your favorite language and IDE to build APIs and apps faster than ever. Access a rich gallery of pre-built APIs that make connecting to cloud services like Office 365 and Salesforce.com easy. Use templates to automate common workflows and accelerate your development. Experience unparalleled developer productivity with continuous integration using Visual Studio Team Services, GitHub, and live-site debugging.</p>
+</li>
+<li><p><strong>Enterprise grade:</strong> App Service is designed for building and hosting secure mission-critical applications. Build Azure Active Directory-integrated business apps that connect securely to on-premises resources, and then host them on a secure cloud platform that&#39;s compliant with ISO information security standard, SOC2 accounting standards, and PCI security standards. Automatically back up and restore your apps, all while enjoying enterprise-level SLAs.</p>
+</li>
+<li><p><strong>Build on Linux or bring your own Linux container image:</strong> Azure App Service provides default containers for versions of Node.js and PHP that make it easy to quickly get up and running on the service. With our new container support, developers can create a customized container based on the defaults. For example, developers could create a container with specific builds of Node.js and PHP that differ from the default versions provided by the service. This enables developers to use new or experimental framework versions that are not available in the default containers.</p>
+</li>
+<li><p><strong>Global scale:</strong> App Service provides availability and automatic scale on a global datacenter infrastructure. Easily scale applications up or down on demand, and get high availability within and across different geographical regions. Replicating data and hosting services in multiple locations is quick and easy, making expansion into new regions and geographies as simple as a mouse click.</p>
+</li>
+<li><p><strong>Optimized for DevOps:</strong> Focus on rapidly improving your apps without ever worrying about infrastructure. Deploy app updates with built-in staging, roll-back, testing-in-production, and performance testing capabilities. Achieve high availability with geo-distributed deployments. Monitor all aspects of your apps in real-time and historically with detailed operational logs. Never worry about maintaining or patching your infrastructure again.</p>
+</li>
+</ul>
+<h3 id="deploying-to-a-web-app-from-visual-studio">Deploying to a Web App from Visual Studio</h3>
+<p>Now that you understand the basics of web apps, let&#39;s create one and deploy our app to the cloud! </p>
+<p>Earlier in this chapter, you created a resource group to house resources for this workshop. You did this via the Azure Portal. You can also create Web Apps via the Azure portal in the same manner. But, I&#39;m going to show you another way of creating a Web App: from Visual Studio.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Deploying to a Web App from Visual Studio 2017
+</h4>
 
+<blockquote>
+<p><strong>Visual Studio 2017 Warning</strong> </p>
+<p>This exercise assumes you&#39;re running Visual Studio 2017. The UI and screens in Visual Studio 2015 aren&#39;t the same, but similar. We&#39;re not going to include screen shots for 2015, but we think you can figure it out.</p>
+</blockquote>
+<p>From Visual Studio, right-click the <em>Web</em> project and select <em>Publish</em>. In the web publish window, select <em>Microsoft Azure App Service</em>, <em>Create New</em>, and press <em>Publish</em>. This short clip walks you through the process:</p>
+<p><img src="images/chapter1/publish-web-app.gif" class="img-large" /></p>
+<p>On the next page, give your Web App a name, select your Azure subscription, and select the Resource Group you created earlier (mine was named <em>workshop</em>).</p>
+<blockquote>
+<p><strong>Unique Web App Names</strong></p>
+<p>Because a web app&#39;s name is used as part of it&#39;s URL in Azure, you need to ensure it&#39;s name is unique. Luckily, Visual Studio will check to ensure your web app name is unique before it attempts to create it. In other words, don&#39;t try to use the web app name you see below, because I already used it.</p>
+</blockquote>
+<p><img src="images/chapter1/web-app-settings.png" class="img-override" /></p>
+<p>Click <em>New...</em> to create a new Web App plan.</p>
+<blockquote>
+<p><strong>Web App Plans</strong> </p>
+<p>Web App plans describe the performance needs of a web app. Plans range from free (where multiple web apps run on shared hardware) to not-so-free, where you have dedicated hardware, lots of processing power, RAM, and SSDs. To learn more about the various plans, check out this <a href="https://azure.microsoft.com/en-us/pricing/details/app-service/plans/">article</a>.</p>
+</blockquote>
+<p>Create a new free plan.</p>
+<p><img src="images/chapter1/new-plan.png" class="img-override" /></p>
+<p>After the plan is created, click <em>Create</em> to create the Web App in Azure.</p>
+<p>When the Azure Web App is created in Azure, Visual Studio will publish the app to the Web App. after the publish has finished, your browser window will launch, showing you your deployed website. </p>
+<blockquote>
+<p><strong>Web App URLs</strong></p>
+<p>The deployed web app has a URL of <em>Web App Name</em>.azurewebsites.net. Remember this URL, because you&#39;ll be using it in later chapters.</p>
+</blockquote>
+<p>One final note is to check the Azure Portal to see the App Service plan and Web App deployed to your resource group:</p>
+<p><img src="images/chapter1/deployed-webapp.png" class="img-override" /></p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
 			</div>
 			<hr>
 			<div class="chapter">
