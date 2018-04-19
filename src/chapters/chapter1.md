@@ -269,7 +269,7 @@ Create a new free plan.
 
 After the plan is created, click *Create* to create the Web App in Azure.
 
-When the Azure Web App is created in Azure, Visual Studio will publish the app to the Web App. after the publish has finished, your browser window will launch, showing you your deployed website. 
+When the Azure Web App is created in Azure, Visual Studio will publish the app to the Web App. After the publish has finished, your browser window will launch, showing you your deployed website. 
 
 > **Web App URLs**
 >
