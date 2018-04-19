@@ -391,9 +391,91 @@
 			<hr>
 			<div class="chapter">
 				<h2 id="introduction-to-the-custom-speech-service">Introduction to the Custom Speech Service</h2>
+<p>In this chapter you&#39;ll learn about the Custom Speech Service, how to provision one in the Azure Portal, and how to link your subscription to the Custom Speech Service portal.</p>
+<blockquote>
+<p><strong>Abbreviation</strong> </p>
+<p>To save some time, you may see me refer to the Custom Speech Service as CSS. I know it can be confusing, especially if you&#39;re a web developer. But, let&#39;s pretend for a day that you&#39;re not, and use CSS in a different way. Thanks!</p>
+</blockquote>
 <h3 id="overview">Overview</h3>
+<p>The Custom Speech Service enables you to create a customized speech-to-text platform that meets the needs of your business. With the service, you create customized language models and acoustic models tailored to your application and your users. By uploading your specific speech and/or text data to the Custom Speech Service, you can create custom models that can be used in conjunction with Microsoft’s existing state-of-the-art speech models. With these capabilities, you&#39;re able to filter out common background noise, adjust for localized dialects, and train the speech service to recognize non-standard/obscure words and phrases (like &quot;Pokemon&quot;, scientific terms, and technical jargon).</p>
+<p>For example, if you’re adding voice interaction to a mobile phone, tablet or PC app, you can create a custom language model that can be combined with Microsoft’s acoustic model to create a speech-to-text endpoint designed especially for your app. If your application is designed for use in a particular environment or by a particular user population, you can also create and deploy a custom acoustic model with this service.</p>
+<h4 id="how-do-speech-recognition-systems-work-">How do speech recognition systems work?</h4>
+<p>Before you get started, it&#39;s important to understand how speech recognition systems work.</p>
+<p>Speech recognition systems are composed of several components that work together. Two of the most important components are the acoustic model and the language model.</p>
+<blockquote>
+<p><strong>Acoustic Model</strong></p>
+<p>The acoustic model is a classifier that labels short fragments of audio into one of a number of phonemes, or sound units, in a given language. For example, the word “speech” is comprised of four phonemes “s p iy ch”. These classifications are made on the order of 100 times per second.</p>
+</blockquote>
+<blockquote>
+<p><strong>Phoneme</strong></p>
+<p>In short, a sound unit. Any of the perceptually distinct units of sound in a specified language that distinguish one word from another, for example p, b, d, and t in the English words pad, pat, bad, and bat.</p>
+</blockquote>
+<blockquote>
+<p><strong>Language Model</strong></p>
+<p>The language model is a probability distribution over sequences of words. The language model helps the system decide among sequences of words that sound similar, based on the likelihood of the word sequences themselves. For example, “recognize speech” and “wreck a nice beach” sound alike but the first hypothesis is far more likely to occur, and therefore will be assigned a higher score by the language model.</p>
+</blockquote>
+<p>Both the acoustic and language models are statistical models learned from training data. As a result, they perform best when the speech they encounter when used in applications is similar to the data observed during training. The acoustic and language models in the Microsoft Speech-To-Text engine have been trained on an enormous collection of speech and text and provide state-of-the-art performance for the most common usage scenarios, such as interacting with Cortana on your smart phone, tablet or PC, searching the web by voice or dictating text messages to a friend.</p>
+<blockquote>
+<p><strong>Credits</strong></p>
+<p>This section was borrowed from Microsoft&#39;s <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/Custom-Speech-Service/cognitive-services-custom-speech-home#what-is-the-custom-speech-service">official documentation</a>. Thank you!</p>
+</blockquote>
+<h4 id="using-the-custom-speech-service-acoustic-models-and-language-models">Using the Custom Speech Service, Acoustic Models, and Language Models</h4>
+<p>Throughout the next several chapters, you&#39;ll be building acoustic and language models. Don&#39;t worry if you don&#39;t understand everything right now, because you&#39;ll be learning as you go.</p>
+<blockquote>
+<p><strong>Bing Speech API</strong></p>
+<p>Microsoft has another speech-to-text service in Azure called the Bing Speech API. This API is like the Custom Speech Service, but it cannot be customized. I like to think of the Bing Speech API as a v1 product, and the Custom Speech Service as a v2 product. Both are highly capable, but when I need to account for background noise, custom words, etc. I choose the Custom Speech Service.</p>
+</blockquote>
 <h3 id="provisioning-in-azure">Provisioning in Azure</h3>
+<p>Now that you know what the Custom Speech Service can do, let&#39;s start using it! You&#39;ll start by creating a Custom Speech Service instance in the Azure portal. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Creating a Custom Speech Service Instance
+</h4>
+
+<p>Start by jumping back to the Azure portal, and create a new resource by clicking the <em>Create a resource</em> button.</p>
+<p>Search for <em>Custom Speech Service</em>:</p>
+<p><img src="images/chapter2/css-search.png" class="img-override" /></p>
+<p>Fill out the required parameters as you create an instance:</p>
+<ul>
+<li>Name: <em>workshop-css</em>, or something similar</li>
+<li>Subscription</li>
+<li>Location: <em>West US</em></li>
+<li>Pricing tier: <em>F0</em></li>
+<li>Resource group: the resource group you created earlier</li>
+</ul>
+<p><img src="images/chapter2/css-create.png" class="img-override" /></p>
+<blockquote>
+<p><strong>West US Location</strong></p>
+<p>Normally, I recommend you keep resources in the same region, but the Custom Speech Service is in preview right now, so it&#39;s only available in West US.</p>
+</blockquote>
+<p>When the Custom Speech Service instance is provisioned, it will appear in your resource group:</p>
+<p><img src="images/chapter2/css-resource-group.png" class="img-override" /></p>
+<p>The final step is to navigate to the Custom Speech Service instance by clicking on it. </p>
+<p>Locate the <em>Keys</em> area and take note of <em>KEY 1</em>:</p>
+<p><img src="images/chapter2/css-keys.png" class="img-override" /></p>
+<p>You&#39;ll need this key in the next step, so don&#39;t forget it.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
 <h3 id="linking-your-subscription-on-the-css-web-portal">Linking your Subscription on the CSS Web Portal</h3>
+<p>There&#39;s not much you can do with the Custom Speech Service in the Azure portal because the service is still in preview. Instead, a separate portal exists to perform customizations and work with the service. In the next section, you&#39;ll be introduced to the Custom Speech Service portal.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Linking your CSS subscription to the CSS portal
+</h4>
+
+<p>Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>.</p>
+<p>Click the <em>Sign In</em> link in the upper right and sign in with your Azure portal subscription login.</p>
+<p>After logging in, click on your name the upper right, and select the <em>Subscriptions</em> option below it:</p>
+<p><img src="images/chapter2/portal-sub.png" class="img-override" /></p>
+<h4 id="subscriptions">Subscriptions</h4>
+<p>The <em>Subscriptions</em> page shows all of your connected CSS subscriptions. </p>
+<p><img src="images/chapter2/portal-sub-page.png" class="img-override" /></p>
+<p>Click the <em>Connect existing subscription</em> button. Add the CSS subscription you just created in the Azure portal. Give it a name and enter <em>KEY 1</em> from the Azure portal.</p>
+<p><img src="images/chapter2/sub-add.png" class="img-override" /></p>
+<p>You should see the subscription appear on the subscriptions page.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
+<p>That&#39;s it. In the next chapter, you&#39;ll start to use the CSS by creating various datasets for training and testing.</p>
 
 			</div>
 			<hr>
