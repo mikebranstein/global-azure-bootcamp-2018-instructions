@@ -137,7 +137,7 @@ You're now connected to your VM.
 >
 > It's important that you download an evergreen browser on your virtual machine, because the version of Internet Explorer installed on the VM is not compatible with some of the JavaScript we have in this workshop.  
 
-Before you can download files through Internet Explorer, you need to enable downloads. Go to Tools -> Internet Settings -> Security -> Internet -> Custom Level. Find Downloads -> File download, then select Enabled. Close Internet Explorer, then re-open.
+Before you can download files through Internet Explorer, you need to enable downloads. Go to Tools -> Internet Options -> Security -> Internet -> Custom Level. Find Downloads -> File download, then select Enabled. Close Internet Explorer, then re-open.
 
 <img src="images/chapter1/enable-downloads.gif" class="img-override" />
 
