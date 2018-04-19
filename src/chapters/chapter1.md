@@ -205,4 +205,7 @@ This concludes the exercise.
 
 <div class="exercise-end"></div>
 
-That's it! You're up and running and ready to move on!
+That's it! You're up and running and ready to move on! In the next section, you'll learn how to deploy your website to Azure.
+
+### Deploying the Web Site to Azure
+
