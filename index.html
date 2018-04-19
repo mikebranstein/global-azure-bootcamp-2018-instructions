@@ -81,7 +81,7 @@
 <li>Chapter 0: Introduction</li>
 <li>Chapter 1: Getting Started in Azure</li>
 <li>Chapter 2: Introduction to the Custom Speech Service</li>
-<li>Chapter 3: Building Custom Speech Service Datasets </li>
+<li>Chapter 3: Building Custom Speech Service data sets </li>
 <li>Chapter 4: Custom Speech Service Models</li>
 <li>Chapter 5: Deploying Custom Speech Service Endpoints</li>
 <li>Chapter 6: Introduction to Language Understanding (LUIS)</li>
@@ -475,17 +475,56 @@
 <p>This concludes the exercise. </p>
 <div class="exercise-end"></div>
 
-<p>That&#39;s it. In the next chapter, you&#39;ll start to use the CSS by creating various datasets for training and testing.</p>
+<p>That&#39;s it. In the next chapter, you&#39;ll start to use the CSS by creating various data sets for training and testing.</p>
 
 			</div>
 			<hr>
 			<div class="chapter">
-				<h2 id="building-custom-speech-service-datasets">Building Custom Speech Service Datasets</h2>
-<h3 id="overview">Overview</h3>
-<h3 id="acoustic-training-datasets">Acoustic Training Datasets</h3>
-<h3 id="language-training-datasets">Language Training Datasets</h3>
-<h3 id="pronunciation-training-datasets">Pronunciation Training Datasets</h3>
-<h3 id="acoustic-testing-datasets">Acoustic Testing Datasets</h3>
+				<h2 id="building-custom-speech-service-data-sets">Building Custom Speech Service data sets</h2>
+<p>In this chapter, you&#39;ll learn:</p>
+<ul>
+<li>The difference between training and testing data sets</li>
+<li>How acoustic data sets are built </li>
+<li>That language data sets help the Custom Speech Service (CSS) understand the likelihood of certain words and phrases</li>
+<li>That pronunciation data sets can help with simple word and and syllable replacements</li>
+</ul>
+<h3 id="understanding-machine-learning-data-sets">Understanding Machine Learning Data Sets</h3>
+<p>At the core of every artificial intelligence (or machine learning) problem is data. And that data is used in various capacities to train, build, and test the systems you develop. Because data is so critical to machine learning endeavors, you&#39;ll need to learn about the different ways data is used.</p>
+<blockquote>
+<p><strong>Thank you, StackExchange</strong></p>
+<p>This next section was adapted from a <a href="https://stats.stackexchange.com/questions/19048/what-is-the-difference-between-test-set-and-validation-set">StackExchange post</a>. Thank you to all that contributed, as you said it better than I could have.</p>
+</blockquote>
+<h4 id="training-and-test-data-sets">Training and Test Data Sets</h4>
+<p>In many machine learning processes, you need two types of data sets:</p>
+<ul>
+<li><p>In one data set (your <em>gold standard</em>) you have the input data together with correct/expected output, This data set is usually duly prepared either by humans or by collecting some data in semi-automated way. But it is important that you have the expected output for every data row here, because you need to feed the machine learning algorithms the <em>expected</em>, or <em>correct</em> results for it to learn. This data set is often referred to as the <em>training data set</em>. </p>
+</li>
+<li><p>In the other data set, you collect the data you are going to apply your model to. In many cases this is the data where you are interested for the output of your model and thus you don&#39;t have any &quot;expected&quot; output here yet. This is often real-world data. </p>
+</li>
+</ul>
+<p>With these two data sets, the machine learning process adheres to a standard 3-phase process:</p>
+<ol>
+<li><p>Training phase: you present your data from your &quot;gold standard&quot; (or <em>training</em> data set) and train your model, by pairing the input with expected output. Often you split your entire training data set into two pieces. Approximately 70% of the training data is used for training, and 30% reserved for validation/testing. The 30% reserved data is often referred to as <em>test</em> data. The result of this phase is a trained model.</p>
+</li>
+<li><p>Validation/Test phase: to estimate how well your trained model has been trained, you pass in the reserved 30% of your testing data and evaluate it&#39;s accuracy. </p>
+</li>
+<li><p>Application phase: now you apply your trained model to the real-world data and get the results. Since you normally don&#39;t have any reference value in this type of data, you can only speculate about the quality of your model output using the results of your validation phase. You perform additional accuracy tests.</p>
+</li>
+</ol>
+<blockquote>
+<p><strong>Separation of Training, Test, and Real-World Data Sets</strong></p>
+<p>An easy mistake to make with your training, test, and real-world data sets is overlapping data (or reusing data from one set in another). Imagine that you training a model to answer true/false questions using a series of 10 questions and answers. After the model is trained, you use the same 10 questions to evaluate how well the model performs. Ideally, it should perform 100%, but you don&#39;t know how well it <em>really</em> performs because you tested with the training data. The only true test is to use other real-world questions, then re-evaluate its performance.</p>
+</blockquote>
+<h4 id="applying-machine-learning-data-set-concepts-to-the-custom-speech-service">Applying Machine Learning Data Set Concepts to the Custom Speech Service</h4>
+<p>Now that you know about the different types of data, you&#39;ll be creating training data sets for acoustic, language, and pronunciation data, then testing acoustic data. </p>
+<blockquote>
+<p><strong>Acoustic, Language, and Pronunciation</strong></p>
+<p>Don&#39;t worry if you don&#39;t know the difference between these 3 types of data the CSS uses, you&#39;ll be learning about it next.</p>
+</blockquote>
+<h3 id="acoustic-training-data-sets">Acoustic Training data sets</h3>
+<h3 id="language-training-data-sets">Language Training data sets</h3>
+<h3 id="pronunciation-training-data-sets">Pronunciation Training data sets</h3>
+<h3 id="acoustic-testing-data-sets">Acoustic Testing data sets</h3>
 
 			</div>
 			<hr>

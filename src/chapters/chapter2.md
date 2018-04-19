@@ -119,4 +119,4 @@ This concludes the exercise.
 
 <div class="exercise-end"></div>
 
-That's it. In the next chapter, you'll start to use the CSS by creating various datasets for training and testing.
+That's it. In the next chapter, you'll start to use the CSS by creating various data sets for training and testing.

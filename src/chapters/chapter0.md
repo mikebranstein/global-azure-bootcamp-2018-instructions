@@ -53,7 +53,7 @@ In this year’s Global Azure Bootcamp, you’ll learn how to integrate Azure’
 * Chapter 0: Introduction
 * Chapter 1: Getting Started in Azure
 * Chapter 2: Introduction to the Custom Speech Service
-* Chapter 3: Building Custom Speech Service Datasets 
+* Chapter 3: Building Custom Speech Service data sets 
 * Chapter 4: Custom Speech Service Models
 * Chapter 5: Deploying Custom Speech Service Endpoints
 * Chapter 6: Introduction to Language Understanding (LUIS)
