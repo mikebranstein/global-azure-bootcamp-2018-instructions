@@ -1083,9 +1083,99 @@ get really mad pikachu
 			<hr>
 			<div class="chapter">
 				<h2 id="introduction-to-language-understanding-luis-">Introduction to Language Understanding (LUIS)</h2>
+<p>In this chapter, you&#39;ll learn:</p>
+<ul>
+<li>how Azure&#39;s Language Understanding (LUIS) service can identify the intent of text</li>
+<li>how to provision a LUIS subscription and it to the LUIS web portal</li>
+</ul>
 <h3 id="overview">Overview</h3>
+<p>In the past chapters, you&#39;ve been focused on building a customized speech recognition engine with the CSS. Now that you are equipped with the knowledge to build these on your own, we&#39;ll turn our attention to analyzing the results your CSS generates.</p>
+<p>In most machine learning and speech-to-text projects, using a single product (like CSS) isn&#39;t common. Instead, you&#39;ll often chain the results of one service to the input of another. This process is referred to as building a machine learning <em>pipeline</em>. </p>
+<p>In the final chapters of this workshop, you&#39;ll be expanding your speech-to-text pipeline by adding intent analysis with Language Understanding (LUIS).</p>
+<h4 id="about-language-understanding-luis-">About Language Understanding (LUIS)</h4>
+<p>Language Understanding (LUIS) allows your application to understand what a person wants in their own words. LUIS uses machine learning to allow developers to build applications that can receive user input in natural language and extract meaning from it. A client application that converses with the user can pass user input to a LUIS app and receive relevant, detailed information back.</p>
+<h4 id="what-is-a-luis-app-">What is a LUIS app?</h4>
+<p>A LUIS app is a domain-specific language model designed by you and tailored to your needs. You can start with a prebuilt domain model, build your own, or blend pieces of a prebuilt domain with your own custom information.</p>
+<p>A model starts with a list of general user intentions such as &quot;Book Flight&quot; or &quot;Contact Help Desk.&quot; Once the intentions are identified, you supply example phrases called utterances for the intents. Then you label the utterances with any specific details you want LUIS to pull out of the utterance.</p>
+<p>Prebuilt domain models include all these pieces for you and are a great way to start using LUIS quickly.</p>
+<p>After the model is designed, trained, and published, it is ready to receive and process utterances. The LUIS app receives the utterance as an HTTP request and responds with extracted user intentions. Your client application sends the utterance and receives LUIS&#39;s evaluation as a JSON object. Your client app can then take appropriate action.</p>
+<p><img src="images/chapter6/luis-overview-process.png" class="img-override" /></p>
+<h4 id="key-luis-concepts">Key LUIS Concepts</h4>
+<p><strong>Intents</strong> </p>
+<p>An intent represents actions the user wants to perform. The intent is a purpose or goal expressed in a user&#39;s input, such as booking a flight, paying a bill, or finding a news article. You define and name intents that correspond to these actions. A travel app may define an intent named &quot;BookFlight.&quot;</p>
+<p><strong>Utterances</strong></p>
+<p>An utterance is text input from the user that your app needs to understand. It may be a sentence, like &quot;Book a ticket to Paris&quot;, or a fragment of a sentence, like &quot;Booking&quot; or &quot;Paris flight.&quot; Utterances aren&#39;t always well-formed, and there can be many utterance variations for a particular intent.</p>
+<p><strong>Entities</strong></p>
+<p>An entity represents detailed information that is relevant in the utterance. For example, in the utterance &quot;Book a ticket to Paris&quot;, &quot;Paris&quot; is a location. By recognizing and labeling the entities that are mentioned in the user’s utterance, LUIS helps you choose the specific action to take to answer a user&#39;s request.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Intent</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th style="text-align:left">Sample User Utterance</th>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+<th style="text-align:left">Entities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">BookFlight</td>
+<td>&nbsp;</td>
+<td style="text-align:left">&quot;Book a flight to Seattle?&quot;</td>
+<td>&nbsp;</td>
+<td style="text-align:left">Seattle</td>
+</tr>
+<tr>
+<td style="text-align:left">StoreHoursAndLocation</td>
+<td>&nbsp;</td>
+<td style="text-align:left">&quot;When does your store open?&quot;</td>
+<td>&nbsp;</td>
+<td style="text-align:left">open</td>
+</tr>
+<tr>
+<td style="text-align:left">ScheduleMeeting</td>
+<td>&nbsp;</td>
+<td style="text-align:left">&quot;Schedule a meeting at 1pm with Bob in Distribution&quot;</td>
+<td>&nbsp;</td>
+<td style="text-align:left">1pm, Bob</td>
+</tr>
+</tbody>
+</table>
+<h4 id="how-you-ll-use-luis">How you&#39;ll use LUIS</h4>
+<p>Now that you know a little bit about LUIS, let&#39;s see how it&#39;ll be used in conjunction with CSS. </p>
+<p>When you&#39;re finished integrating LUIS into your solution, you&#39;ll be able to speak commands into the web site you published, and ask a variety of Pokemon (Pikachu, Jigglypuff, Meowth, etc.) to perform a variety of actions (sit, jump, scratch, sing, etc.).</p>
+<p>LUIS will be used to take the output of the CSS endpoint you created and identify the intent (the action) and entity (the Pokemon). Then, the web site will parse the LUIS response and act accordingly by displaying the appropriate image at the bottom of the page. </p>
 <h3 id="provisioning-in-azure">Provisioning in Azure</h3>
+<p>Before we can use LUIS, we&#39;ll need to provision a LUIS subscription in the Azure portal. Let&#39;s get started!</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Creating a LUIS Subscription
+</h4>
+
+<p>Start by jumping back to the Azure portal, and create a new resource by clicking the <em>Create a resource</em> button.</p>
+<p>Search for <em>Language Understanding</em>:</p>
+<p><img src="images/chapter6/luis1.png" class="img-override" /></p>
+<p>Fill out the required parameters as you create an instance:</p>
+<ul>
+<li>Name: <em>workshop-luis</em>, or something similar</li>
+<li>Subscription: <em>your Azure subscription</em></li>
+<li>Location: <em>East US</em></li>
+<li>Pricing tier: <em>F0</em></li>
+<li>Resource group: the resource group you created earlier</li>
+</ul>
+<p><img src="images/chapter6/luis2.png" class="img-override" /></p>
+<p>When the LUIS subscription is provisioned, it will appear in your resource group:</p>
+<p><img src="images/chapter6/luis3.png" class="img-override" /></p>
+<p>The final step is to navigate to the LUIS subscription by clicking on it. </p>
+<p>Locate the <em>Keys</em> area and take note of <em>KEY 1</em>:</p>
+<p><img src="images/chapter6/luis4.png" class="img-override" /></p>
+<p>You&#39;ll need this key in the next chapter, so don&#39;t forget it.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
 <h3 id="linking-your-subscription-on-the-luis-web-portal">Linking your Subscription on the LUIS Web Portal</h3>
+<p>There&#39;s not much you can do with LUIS in the Azure portal because it has a separate portal (like the Custom Speech Service). </p>
+<p>The process for linking your LUIS subscription in the LUIS portal is a bit different than linking your CSS subscription. As a result, we&#39;ll revisit this in a later chapter. </p>
+<p>For now, hold on to your subscription key.</p>
 
 			</div>
 			<hr>
