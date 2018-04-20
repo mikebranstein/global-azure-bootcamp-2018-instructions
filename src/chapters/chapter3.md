@@ -139,7 +139,7 @@ Note the *Status* of the acoustic dataset is *NotStarted*. In a few moments, it 
 
 <img src="images/chapter3/import4.png" class="img-override" />
 
-When you upload acoustic data, the CSS will analyze the data, checking it for errors, and to ensure the transcription file matches the uploaded audio filenames. There are a variety of other checks that are performed that aren't important, but it's good to know that there is some post-processing that needs to occur before you can use the acoustic data set.
+When you upload acoustic data, the CSS will analyze the data, check it for errors, and ensure the transcription file matches the uploaded audio filenames. There are a variety of other checks that are performed that aren't important, but it's good to know that there is some post-processing that needs to occur before you can use the acoustic data set.
 
 When the CSS finishes analyzing and validating the acoustic data, the *Status* will change to *Succeeded*:
 
@@ -187,7 +187,7 @@ If you wish some sentences to have a higher weight (importance), you can add it 
 >
 > Don't worry about these rules for now, because we've already assembled a collection of utterances appropriate for our needs today.
 
-Before we get started, take a look at the utterances in the *training-language-model-data.txt* file. Here's a short except:
+Before we get started, take a look at the utterances in the *training-language-model-data.txt* file. Here's a short excerpt:
 
 ```
 ash's best friend should sit down
@@ -235,7 +235,7 @@ Congratulations! You've created your first language data set. We'll be using it 
 
 > **Challenge #2**
 >
-> Just like you did for the acoustic data set, feel fee to augment the utterances I built. I suggest continuing to create utterances related to the Pokemon you added in the last challenge.
+> Just like you did for the acoustic data set, feel free to augment the utterances I built. I suggest continuing to create utterances related to the Pokemon you added in the last challenge.
 
 This concludes the exercise. 
 
@@ -255,7 +255,7 @@ Display form <Tab>(\t) Spoken form <Newline>(\r\n)
 
 #### Requirements for the spoken form
 
-The spoken form must be lowercase, which can be forced during the import. In addition, you must provide checks in the data importer. No tab in either the spoken form or the display form is permitted. There might, however, be more forbidden characters in the display form (for example, ~ and ^).
+The spoken form must be lowercase, which can be forced during the import. No tab in either the spoken form or the display form is permitted. There might, however, be more forbidden characters in the display form (for example, ~ and ^).
 
 Each .txt file can have several entries. For example, see the following screenshot:
 
@@ -265,7 +265,7 @@ The spoken form is the phonetic sequence of the display form. It is composed of 
 
 #### When to use Pronunciation data
 
-I've found it useful to use pronunciation in a variety of circumstances. In the above example, pronunciation helps transform *three c p 0* to *3CPO*. I've also used it in the past to transform *a t and t* to *AT&T*, and *microsoft dot com* to *Microsoft.com*.
+I've found it useful to use pronunciation in a variety of circumstances. In the above example, pronunciation helps transform *see three pee oh* to *C3PO*. I've also used it in the past to transform *a t and t* to *AT&T*, and *microsoft dot com* to *Microsoft.com*.
 
 #### Adding a Pronunciation Data Set
 
@@ -356,7 +356,7 @@ Congratulations! You've created your testing acoustic data set.
 >
 > Yes. Again. Feel free to augment the testing data set you just created. Remember - don't overlap training/testing data, and make the data similar enough. For example, if you added *Charizard* to your training data sets, it would be a good idea to test for *Charizard*. Likewise, if you didn't add another pokemon, like *Chespin*, you shouldn't expect the CSS to magically recognize it.
 >
-> <img src="images/chapter3/chespin.png" class="img-small" />
+> <img src="images/chapter3/chespin.jpeg" class="img-small" />
 
 This concludes the exercise. 
 
@@ -365,5 +365,5 @@ This concludes the exercise.
 Phew! That was a long chapter! But, you learned quite a bit, like:
 - the importance of separating training data from testing data
 - that acoustic data is a combination of .wav files and normalized text transcripts
-- pronunciation data sets can help your CSS models interpret multi-word phrases into an abbreviation - like 3CPO
+- pronunciation data sets can help your CSS models interpret multi-word phrases into an abbreviation - like C3PO and AT&T
 

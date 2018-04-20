@@ -590,7 +590,7 @@ speech03.wav    the lazy dog was not amused
 <p><img src="images/chapter3/import3.png" class="img-override" /></p>
 <p>Note the <em>Status</em> of the acoustic dataset is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>:</p>
 <p><img src="images/chapter3/import4.png" class="img-override" /></p>
-<p>When you upload acoustic data, the CSS will analyze the data, checking it for errors, and to ensure the transcription file matches the uploaded audio filenames. There are a variety of other checks that are performed that aren&#39;t important, but it&#39;s good to know that there is some post-processing that needs to occur before you can use the acoustic data set.</p>
+<p>When you upload acoustic data, the CSS will analyze the data, check it for errors, and ensure the transcription file matches the uploaded audio filenames. There are a variety of other checks that are performed that aren&#39;t important, but it&#39;s good to know that there is some post-processing that needs to occur before you can use the acoustic data set.</p>
 <p>When the CSS finishes analyzing and validating the acoustic data, the <em>Status</em> will change to <em>Succeeded</em>:</p>
 <p><img src="images/chapter3/import5.png" class="img-override" /></p>
 <p>Congratulations! You&#39;ve created your first acoustic data set. We&#39;ll be using it later in this chapter.</p>
@@ -624,7 +624,7 @@ speech03.wav    the lazy dog was not amused
 <p><strong>More Rules!</strong></p>
 <p>Don&#39;t worry about these rules for now, because we&#39;ve already assembled a collection of utterances appropriate for our needs today.</p>
 </blockquote>
-<p>Before we get started, take a look at the utterances in the <em>training-language-model-data.txt</em> file. Here&#39;s a short except:</p>
+<p>Before we get started, take a look at the utterances in the <em>training-language-model-data.txt</em> file. Here&#39;s a short excerpt:</p>
 <pre><code>ash&#39;s best friend should sit down
 sit pikachu
 sit on the floor pikachu
@@ -657,7 +657,7 @@ get really mad pikachu
 <p>Congratulations! You&#39;ve created your first language data set. We&#39;ll be using it later in this chapter.</p>
 <blockquote>
 <p><strong>Challenge #2</strong></p>
-<p>Just like you did for the acoustic data set, feel fee to augment the utterances I built. I suggest continuing to create utterances related to the Pokemon you added in the last challenge.</p>
+<p>Just like you did for the acoustic data set, feel free to augment the utterances I built. I suggest continuing to create utterances related to the Pokemon you added in the last challenge.</p>
 </blockquote>
 <p>This concludes the exercise. </p>
 <div class="exercise-end"></div> 
@@ -668,12 +668,12 @@ get really mad pikachu
 <p>Here&#39;s how it works. In a single .txt file, you can enter several custom pronunciation entries. The structure is as follows:</p>
 <pre><code>Display form &lt;Tab&gt;(\t) Spoken form &lt;Newline&gt;(\r\n)
 </code></pre><h4 id="requirements-for-the-spoken-form">Requirements for the spoken form</h4>
-<p>The spoken form must be lowercase, which can be forced during the import. In addition, you must provide checks in the data importer. No tab in either the spoken form or the display form is permitted. There might, however, be more forbidden characters in the display form (for example, ~ and ^).</p>
+<p>The spoken form must be lowercase, which can be forced during the import. No tab in either the spoken form or the display form is permitted. There might, however, be more forbidden characters in the display form (for example, ~ and ^).</p>
 <p>Each .txt file can have several entries. For example, see the following screenshot:</p>
 <p><img src="images/chapter3/custom-speech-pronunciation-file.png" class="img-override" /></p>
 <p>The spoken form is the phonetic sequence of the display form. It is composed of letters, words, or syllables. Currently, there is no further guidance or set of standards to help you formulate the spoken form.</p>
 <h4 id="when-to-use-pronunciation-data">When to use Pronunciation data</h4>
-<p>I&#39;ve found it useful to use pronunciation in a variety of circumstances. In the above example, pronunciation helps transform <em>three c p 0</em> to <em>3CPO</em>. I&#39;ve also used it in the past to transform <em>a t and t</em> to <em>AT&amp;T</em>, and <em>microsoft dot com</em> to <em>Microsoft.com</em>.</p>
+<p>I&#39;ve found it useful to use pronunciation in a variety of circumstances. In the above example, pronunciation helps transform <em>see three pee oh</em> to <em>C3PO</em>. I&#39;ve also used it in the past to transform <em>a t and t</em> to <em>AT&amp;T</em>, and <em>microsoft dot com</em> to <em>Microsoft.com</em>.</p>
 <h4 id="adding-a-pronunciation-data-set">Adding a Pronunciation Data Set</h4>
 <p>For your final data set, you&#39;ll create a pronunciation data set. Let&#39;s get to it!</p>
 <h4 class="exercise-start">
@@ -735,7 +735,7 @@ get really mad pikachu
 <blockquote>
 <p><strong>Challenge #4</strong></p>
 <p>Yes. Again. Feel free to augment the testing data set you just created. Remember - don&#39;t overlap training/testing data, and make the data similar enough. For example, if you added <em>Charizard</em> to your training data sets, it would be a good idea to test for <em>Charizard</em>. Likewise, if you didn&#39;t add another pokemon, like <em>Chespin</em>, you shouldn&#39;t expect the CSS to magically recognize it.</p>
-<p><img src="images/chapter3/chespin.png" class="img-small" /></p>
+<p><img src="images/chapter3/chespin.jpeg" class="img-small" /></p>
 </blockquote>
 <p>This concludes the exercise. </p>
 <div class="exercise-end"></div> 
@@ -744,7 +744,7 @@ get really mad pikachu
 <ul>
 <li>the importance of separating training data from testing data</li>
 <li>that acoustic data is a combination of .wav files and normalized text transcripts</li>
-<li>pronunciation data sets can help your CSS models interpret multi-word phrases into an abbreviation - like 3CPO</li>
+<li>pronunciation data sets can help your CSS models interpret multi-word phrases into an abbreviation - like C3PO and AT&amp;T</li>
 </ul>
 
 			</div>
