@@ -3,7 +3,6 @@
 In this chapter, you'll learn:
 - how to build intents
 - how to create entities and map them to intent phrases
-- how to improve accuracy of LUIS using phrase lists
 
 ### Overview
 
