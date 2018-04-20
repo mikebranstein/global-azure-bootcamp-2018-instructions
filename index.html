@@ -818,8 +818,115 @@ get really mad pikachu
 
 <p>I know we can do better then 45%, and we will as we build our own acoustic and language models. </p>
 <h3 id="acoustic-models">Acoustic Models</h3>
+<p>Let&#39;s get started building an acoustic model based on our acoustic data set we uploaded earlier.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Training an acoustic model
+</h4>
+
+<p>Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, and navigate to <em>Acoustic Models</em>. </p>
+<p><img src="images/chapter4/acoustic-model1.png" class="img-override" /></p>
+<p>This page shows the various acoustic models you&#39;ve trained for the CSS.</p>
+<p>Click the <em>Create New</em> button and complete the following fields:</p>
+<ul>
+<li>Locale: en-US</li>
+<li>Name: Pokemon - Acoustic Model</li>
+<li>Description: <em>blank</em></li>
+<li>Base Acoustic Model: Microsoft Search and Diction Model</li>
+<li>Acoustic Data: Pokemon - Acoustic Data - Training</li>
+<li>Subscription: <em>your subscription</em></li>
+<li>Accuracy Testing: <em>unchecked</em>, b/c we&#39;ve already run a test</li>
+</ul>
+<p><img src="images/chapter4/acoustic-model2.png" class="img-override" /></p>
+<p>Click <em>Create</em> to train the model.</p>
+<p>When the model is saved, you&#39;ll navigate back to the <em>Acoustic Models</em> page:</p>
+<p><img src="images/chapter4/acoustic-model3.png" class="img-override" /></p>
+<p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
+<p>The test run may take some time to execute (up to 10 minutes). So, it&#39;s a good time to take a short break. Check back in another 10.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/25ShHY0LMpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>Hi, welcome back. My son <em>loves</em> these videos. </p>
+<p>So, let&#39;s check back in on the model training:</p>
+<p><img src="images/chapter4/acoustic-model4.png" class="img-override" /></p>
+<p>Excellent, it&#39;s finished.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>  
+
+<p>There&#39;s not much more to do with the acoustic model, so let&#39;s do the same with our language data set and train a language model</p>
 <h3 id="language-models">Language Models</h3>
+<p>Training language models is just like training acoustic models, so let&#39;s dive in.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Training a language model
+</h4>
+
+<p>Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, and navigate to <em>Language Models</em>. </p>
+<p><img src="images/chapter4/lang-model1.png" class="img-override" /></p>
+<p>This page shows the various language models you&#39;ve trained for the CSS.</p>
+<p>Click the <em>Create New</em> button and complete the following fields:</p>
+<ul>
+<li>Locale: en-US</li>
+<li>Name: Pokemon - Acoustic Model</li>
+<li>Description: <em>blank</em></li>
+<li>Base Language Model: Microsoft Search and Diction Model</li>
+<li>Language Data: Pokemon - Language Data - Training</li>
+<li>Pronunciation Data: Pokemon - Pronunciation Data - Training</li>
+<li>Subscription: <em>your subscription</em></li>
+<li>Accuracy Testing: <em>unchecked</em>, b/c we&#39;ve already run a test</li>
+</ul>
+<p><img src="images/chapter4/lang-model2.png" class="img-override" /></p>
+<p>Click <em>Create</em> to train the model.</p>
+<p>When the model is saved, you&#39;ll navigate back to the <em>Language Models</em> page:</p>
+<p><img src="images/chapter4/lang-model3.png" class="img-override" /></p>
+<p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
+<p>The training process may take some time to execute (up to 10 minutes). So, it&#39;s a good time to take yet another short break. Check back in another 5.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8_lfxPI5ObM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>Welcome back, again. This video was for me. I <em>love</em> Tesla. Hopefully, I&#39;ll get one someday. Someday soon.</p>
+<p>So, let&#39;s check back in on the model training:</p>
+<p><img src="images/chapter4/lang-model4.png" class="img-override" /></p>
+<p>Excellent, it&#39;s finished.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>  
+
 <h3 id="testing-the-trained-models">Testing the Trained Models</h3>
+<p>Now that you&#39;ve built an acoustic model and language model that customizes the base models, let&#39;s test them! The original WER was 45%, so I think we can do better. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Performing an accuracy test on your trained models
+</h4>
+
+<p>Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, and navigate to <em>Accuracy Tests</em>. </p>
+<p>Click the <em>Create New</em> button to begin a test against an acoustic and language model.</p>
+<p>Complete the following fields:</p>
+<ul>
+<li>Locale: en-US</li>
+<li>Subscription: <em>the one you created earlier</em></li>
+<li>Base Model: Microsoft Search and Diction Model, then select the Pokemon models below</li>
+<li>Acoustic Data: Pokemon - Acoustic Data - Testing</li>
+</ul>
+<p><img src="images/chapter4/test6.png" class="img-override" /></p>
+<p>Click <em>Create</em> to begin the test run.</p>
+<p>When the test run is saved, you&#39;ll navigate back to the <em>Accuracy Test Results</em> page:</p>
+<p><img src="images/chapter4/test7.png" class="img-override" /></p>
+<p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
+<p>The test run may take some time to execute (up to 10 minutes). So, it&#39;s a good time to take a short break. Check back in 2.</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A0FZIwabctw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>This one was for everyone. And it&#39;s amazing.</p>
+<p>So, let&#39;s check back in on the accuracy test.</p>
+<p><img src="images/chapter4/test8.png" class="img-override" /></p>
+<p>Sweet! Look at that - 6% WER. I&#39;m ok with that (for now). Feel fee to explore the details of the accuracy test to learn more.</p>
+<blockquote>
+<p><strong>Challenge #5</strong></p>
+<p>Try to get the accuracy test WER down to 0%. Enough said.</p>
+</blockquote>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div> 
+
+<p>In this chapter, you learned:</p>
+<ul>
+<li>why it&#39;s important to test Microsoft&#39;s base model to establish a baseline accuracy</li>
+<li>how to create acoustic and language models</li>
+<li>how to improve CSS accuracy by building customized models </li>
+</ul>
 
 			</div>
 			<hr>
