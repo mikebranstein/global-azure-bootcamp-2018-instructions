@@ -33,7 +33,7 @@ Paste the link into the HTTP GET textbox in Postman, then click the *Params* but
 
 <img src="images/chapter9/send.gif" class="img-override" />
 
-The HTTP response will be displayed in the *Body* area below. My response in included below. I'll let you examine the HTTP response from LUIS on your own.
+The HTTP response will be displayed in the *Body* area below. My response is included below. I'll let you examine the HTTP response from LUIS on your own.
 
 ```json
 {
@@ -140,7 +140,11 @@ I have a few more things to share, so you're not finished yet.
 
 > **Final Challenge**
 >
-> With you understanding of the entire pipeline. Add some more Pokemon to the mix, and a few more intents. Source some new graphics, and update the deployed web app in Azure. 
+> Starting from the beginning with the Custom Speech Service (acoustic & language data sets, models, and deployments), add some more Pokemon to the mix. Then update the LUIS intents, entities, and phrase lists. Finally, add more images to the web site and deploy it all to Azure. 
+
+> **Super Double Secret Probation Challenge**
+>
+> As you can see, I desperately need help styling the web site that's part of this workshop. Submit a PR to my Github repo! Please. Someone. 
 
 ### Increasing LUIS Accuracy
 

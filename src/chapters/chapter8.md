@@ -95,7 +95,7 @@ On the publishing page, there are a few things you can do:
 
 > **Intent Analysis Results**
 >
-> As you're getting started with LUIS, I recommend you have your LUIS apps return all of the identified intents, because it can aid in your debugging of complex intents and models. When you become more comfortable with LUIS and have a greater confidence in it's results, you'll want to disable returning ALL results. This si also especially important on lower-bandwidth apps (like mobile).
+> As you're getting started with LUIS, I recommend you have your LUIS apps return all of the identified intents, because it can aid in your debugging of complex intents and models. When you become more comfortable with LUIS and have a greater confidence in it's results, you'll want to disable returning ALL results. This is also especially important on lower-bandwidth apps (like mobile).
 
 > **Bing spell checking**
 >

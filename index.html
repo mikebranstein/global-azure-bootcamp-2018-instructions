@@ -1200,7 +1200,7 @@ get really mad pikachu
 <p>This page lists the various LUIS apps you have created.</p>
 <p>Click the <em>Create new app</em> button. Name it <em>Pokemon</em>:</p>
 <p><img src="images/chapter7/luis2.png" class="img-override" /></p>
-<p>After creating the app, you be redirected to the <em>Intent</em> page automatically:</p>
+<p>After creating the app, you&#39;ll be redirected to the <em>Intent</em> page automatically:</p>
 <p><img src="images/chapter7/luis3.png" class="img-override" /></p>
 <p>There&#39;s not much more to creating the initial LUIS app, so let&#39;s continue on with defining your app intents.</p>
 <p>This concludes the exercise. </p>
@@ -1281,7 +1281,7 @@ get really mad pikachu
 <li>Meowth</li>
 </ul>
 <p>After adding these Pokemon, add synonyms for each, as shown below.</p>
-<p><img src="images/chapter7/ent2.png" class="img-override" /></p>
+<p><img src="images/chapter7/ent3.png" class="img-override" /></p>
 <p>By adding these synonyms, you train LUIS to recognize the synonyms as the entity list value. For example, <em>bubble pokemon</em> will be recognized as a <em>Pokemon</em> entity, with <em>Jigglypuff</em> as the specific type.</p>
 <h4 id="validating-entity-mapping">Validating entity mapping</h4>
 <p>When you&#39;ve finished adding the entities and synonyms, refresh your browser.</p>
@@ -1420,7 +1420,7 @@ LUIS may be unable to recognize rare and proprietary words, as well as foreign w
 </ul>
 <blockquote>
 <p><strong>Intent Analysis Results</strong></p>
-<p>As you&#39;re getting started with LUIS, I recommend you have your LUIS apps return all of the identified intents, because it can aid in your debugging of complex intents and models. When you become more comfortable with LUIS and have a greater confidence in it&#39;s results, you&#39;ll want to disable returning ALL results. This si also especially important on lower-bandwidth apps (like mobile).</p>
+<p>As you&#39;re getting started with LUIS, I recommend you have your LUIS apps return all of the identified intents, because it can aid in your debugging of complex intents and models. When you become more comfortable with LUIS and have a greater confidence in it&#39;s results, you&#39;ll want to disable returning ALL results. This is also especially important on lower-bandwidth apps (like mobile).</p>
 </blockquote>
 <blockquote>
 <p><strong>Bing spell checking</strong></p>
@@ -1471,7 +1471,7 @@ Key String: 4a580409############ad344e6f25 (some obscured)</li>
 <p><img src="images/chapter9/copy-link.gif" class="img-override" /></p>
 <p>Paste the link into the HTTP GET textbox in Postman, then click the <em>Params</em> button. Next to the <em>q</em> query string parameter, type in <em>pikachu sit down on the ground</em>, then click the <em>Send</em> button:</p>
 <p><img src="images/chapter9/send.gif" class="img-override" /></p>
-<p>The HTTP response will be displayed in the <em>Body</em> area below. My response in included below. I&#39;ll let you examine the HTTP response from LUIS on your own.</p>
+<p>The HTTP response will be displayed in the <em>Body</em> area below. My response is included below. I&#39;ll let you examine the HTTP response from LUIS on your own.</p>
 <pre><code class="lang-json">{
     &quot;query&quot;: &quot;pikachu sit down on the ground&quot;,
     &quot;topScoringIntent&quot;: {
@@ -1561,7 +1561,11 @@ Key String: 4a580409############ad344e6f25 (some obscured)</li>
 <p>I have a few more things to share, so you&#39;re not finished yet.</p>
 <blockquote>
 <p><strong>Final Challenge</strong></p>
-<p>With you understanding of the entire pipeline. Add some more Pokemon to the mix, and a few more intents. Source some new graphics, and update the deployed web app in Azure. </p>
+<p>Starting from the beginning with the Custom Speech Service (acoustic &amp; language data sets, models, and deployments), add some more Pokemon to the mix. Then update the LUIS intents, entities, and phrase lists. Finally, add more images to the web site and deploy it all to Azure. </p>
+</blockquote>
+<blockquote>
+<p><strong>Super Double Secret Probation Challenge</strong></p>
+<p>As you can see, I desperately need help styling the web site that&#39;s part of this workshop. Submit a PR to my Github repo! Please. Someone. </p>
 </blockquote>
 <h3 id="increasing-luis-accuracy">Increasing LUIS Accuracy</h3>
 <p>Earlier in the workshop, you learned how to use phrase lists to increase the accuracy of your LUIS app. But that&#39;s not the only way. LUIS has adaptive learning capabilities and the ability to update the trained LUIS model by validating the generated intent and entity hypothesis of queries it has processed.</p>

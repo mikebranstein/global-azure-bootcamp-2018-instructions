@@ -27,7 +27,7 @@ Click the *Create new app* button. Name it *Pokemon*:
 
 <img src="images/chapter7/luis2.png" class="img-override" />
 
-After creating the app, you be redirected to the *Intent* page automatically:
+After creating the app, you'll be redirected to the *Intent* page automatically:
 
 <img src="images/chapter7/luis3.png" class="img-override" />
 
@@ -163,7 +163,7 @@ After clicking the *Done* button, you're redirected to the *Pokemon* entity deta
 
 After adding these Pokemon, add synonyms for each, as shown below.
 
-<img src="images/chapter7/ent2.png" class="img-override" />
+<img src="images/chapter7/ent3.png" class="img-override" />
 
 By adding these synonyms, you train LUIS to recognize the synonyms as the entity list value. For example, *bubble pokemon* will be recognized as a *Pokemon* entity, with *Jigglypuff* as the specific type.
 
