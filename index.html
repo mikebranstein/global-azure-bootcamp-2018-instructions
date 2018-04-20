@@ -1207,6 +1207,47 @@ get really mad pikachu
 <div class="exercise-end"></div>
 
 <h3 id="creating-intents">Creating Intents</h3>
+<p>You&#39;ll recall that LUIS intents are represent actions the user wants to perform. The intent is a purpose or goal expressed in a user&#39;s input, such as booking a flight, paying a bill, or finding a news article. In our case, we&#39;ll be creating intents like sitting down, scratching, jumping, etc.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Creating LUIS intents
+</h4>
+
+<p>Log in to the LUIS portal at <a href="https://luis.ai">https://luis.ai</a>, and navigate to the <em>Intents</em> area by first navigating to the <em>My Apps</em> areas, drilling down into the <em>Pokemon</em> app:</p>
+<p><img src="images/chapter7/luis3.png" class="img-override" /></p>
+<p>This page lists the various intents you have created. You&#39;ll notice that a <em>None</em> intent was automatically created for you. All LUIS apps start with this intent - you <em>should not</em> delete it. The <em>None</em> intent is used as a default fall-back intent for your LUIS apps. </p>
+<h4 id="finding-the-intents">Finding the intents</h4>
+<p>You&#39;ll be creating a variety of intents in the <em>Pokemon</em> app. To help you, we&#39;ve already defined the intents for you. In the code you downloaded from Github, locate the <em>language-understanding-data</em> folder. It contains a file named <em>luis-utterances.md</em>:</p>
+<p><img src="images/chapter7/luis4.png" class="img-override" /></p>
+<p>Inside the markdown file, you&#39;ll find an intent followed by a series of utterances. For example:</p>
+<pre><code># Sit
+- ash&#39;s best friend should sit down
+- sit pikachu
+- sit on the floor pikachu
+- have a seat meowth
+- meowth please sit on the ground
+</code></pre><p>In the snippet above, the heading <code>Sit</code> is the name of an intent you&#39;ll create, followed by utterances that align to the intent.</p>
+<p>LUIS is like the Custom Speech Service, as it needs to <em>learn</em> the types of phrases (or utterances) that map to an intent. </p>
+<p>Referencing the <em>luis-utterances.md</em> file, create intents for each intent listed in the document.</p>
+<p>Follow along below to create the first intent, then rinse and repeat for the remaining intents.</p>
+<h4 id="adding-an-intent">Adding an intent</h4>
+<p>To add an intent, click the <em>Create new intent</em> button:</p>
+<p><img src="images/chapter7/luis5.png" class="img-override" /></p>
+<p>Name the intent <em>Sit</em>, as referenced in the <em>luis-utterances.md</em> file:</p>
+<p><img src="images/chapter7/luis6.png" class="img-override" /></p>
+<p>On the next screen, the <em>Sit</em> intent will be listed at the top. In the text box below the intent, enter in the related utterances from the <em>luis-utterances.md</em> file. After each utterance, press <em>Enter</em> to save the utterance.</p>
+<p><img src="images/chapter7/intent.gif" class="img-override" /></p>
+<p>You&#39;ll notice that the LUIS portal associated the utterance with the intent each time you press <em>Enter</em>.</p>
+<p>When you&#39;ve finished entering the associated utterances, you can scroll down to review and modify them:</p>
+<p><img src="images/chapter7/luis7.png" class="img-override" /></p>
+<p>You&#39;ll also notice each utterance has a drop down next to it allow you to re-associate it with a different intent, if you made a mistake.</p>
+<p>When you&#39;re finished entering the utterances for this intent, navigate back to the list of intents by clicking the <em>Intents</em> link on the left:</p>
+<p><img src="images/chapter7/luis8.png" class="img-override" /></p>
+<h4 id="finish-adding-the-remaining-intents">Finish adding the remaining intents</h4>
+<p>Proceed to add the remaining intents listed in the <em>luis-utterances.md</em> file. When you&#39;re finished, your list of intents should look like these:</p>
+<p><img src="images/chapter7/luis9.png" class="img-override" /></p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
 <h3 id="adding-entities">Adding Entities</h3>
 <h3 id="mapping-intent-phrases">Mapping Intent Phrases</h3>
 <h3 id="improving-accuracy-with-phrase-lists">Improving Accuracy with Phrase Lists</h3>
