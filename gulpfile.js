@@ -4,10 +4,18 @@ var gulp = require( "gulp" ),
 	marked = require( "marked" ),
 	sass = require( "gulp-sass" ),
 	watch = require( "gulp-watch" ),
-	webServer = require( "gulp-webserver" );
+	webServer = require( "gulp-webserver" ),
+	git = require("gul-git");
 
 gulp.task( "default", [ "build", "server" ], function() {
 	gulp.watch( "./src/**/*", [ "build" ]);
+});
+
+gulp.task("gh-pages", function() {
+	git.checkout("gh-pages");
+	git.merge("master");
+	git.push("origin", "gh-pages");
+	git.checkout("gh-pages");
 });
 
 gulp.task( "build", [ "include", "sass", "scripts" ]);
