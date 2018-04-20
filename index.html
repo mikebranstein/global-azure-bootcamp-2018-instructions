@@ -970,7 +970,114 @@ get really mad pikachu
 <p>This concludes the exercise. </p>
 <div class="exercise-end"></div> 
 
-<h3 id="testing-the-custom-speech-service-endpoint">Testing the Custom Speech Service Endpoint</h3>
+<h3 id="exploring-the-custom-speech-service-endpoint">Exploring the Custom Speech Service Endpoint</h3>
+<p>Now that you&#39;ve deployed a customized CSS endpoint, you can consume it in an application. But how?</p>
+<p>Let&#39;s take a closer look at your deployment.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Exploring a CSS endpoint deployment
+</h4>
+
+<p>Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, and navigate to <em>Deployments</em>. </p>
+<p>Click the <em>Details</em> link next to your <em>Pokemon</em> deployment:</p>
+<p><img src="images/chapter5/deploy3.png" class="img-override" /></p>
+<p>The deployment details page shows you a variety of details about your deployment. Scroll down to the <em>Endpoints</em> area:</p>
+<p><img src="images/chapter5/deploy4.png" class="img-override" /></p>
+<p>The endpoints area shows a variety of URIs that you can use to access your customized deployment. You can interact with the CSS via a:</p>
+<ul>
+<li>HTTP REST API</li>
+<li>WebSockets, using a .NET/Android/iOS client library</li>
+<li>WebSockets, using a .NET service library</li>
+<li>WebSockets with support for the Speech Protocol/JavaScript WebSocket API</li>
+</ul>
+<p>You&#39;ll notice that for each option, you have endpoints for short and long-form audio. In some cases, endpoints support punctuation detection.</p>
+<p>Depending on the needs of your application, you may choose a different endpoint. I&#39;ve used each of these previously and think it&#39;s good to walk through each at a high-level.</p>
+<h4 id="http-rest-api">HTTP REST API</h4>
+<p>Use this option when you have a .wav file that you want to upload and get a single response back. You won&#39;t get real-time speech results back, but it works well when you want to do quick, bulk processing of a large collection of audio files. </p>
+<h4 id="websockets-using-a-net-android-ios-client-library">WebSockets, using a .NET/Android/iOS client library</h4>
+<p>If you need real-time processing of audio, when using a microphone that&#39;s embedded in software with a .NET app, Android app, or iOS app, this is the right choice for you. An important designation here is that you need to use this in conjunction with the SDKs/libraries provided by Microsoft. It&#39;s also important to note that these are intended for client-side applications, not a server-side process that will have a long life span. </p>
+<h4 id="websockets-using-a-net-service-library">WebSockets, using a .NET service library</h4>
+<p>When you need a long-running server-side process to interact in real-time with the CSS in a .NET app, use these endpoints. You&#39;ll also need to use the .NET SDK built for this purpose.</p>
+<h4 id="websockets-with-support-for-the-speech-protocol-javascript-websocket-api">WebSockets with support for the Speech Protocol/JavaScript WebSocket API</h4>
+<p>The last option is to interact with the CSS using a specific protocol called the Speech Protocol. This also has it&#39;s own SDK and API you need to adhere to when using these endpoints. </p>
+<blockquote>
+<p><strong>The Speech Protocol</strong></p>
+<p>I consider the first three options a legacy way of interacting with the CSS. The 4th option (Speech Protocol) is the new and recommended way of interfacing with the CSS. Eventually the first 3 options will be deprecated and the Speech Protocol will be <em>the</em> way to interact. </p>
+<p>Right now, support for the new Speech Protocol is limited to a JavaScript SDK, but if you need a C# version, you can roll your own. To learn more about the protocol, check out the official <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech/api-reference-rest/websocketprotocol">protocol documentation</a>.</p>
+</blockquote>
+<blockquote>
+<p><strong>Rolling your Own Speech Protocol Client</strong></p>
+<p>Don&#39;t do this, and I speak from experience. I&#39;ve done it. It&#39;s not easy, the documentation isn&#39;t great, and unless you have a lot of experience writing web socket protocol code in C#, this can be really time consuming and difficult. I lost a month of my life to this. The end result was pretty cool. I didn&#39;t have an option of waiting for Microsoft&#39;s team to implement the C# SDK, but you probably will. </p>
+</blockquote>
+<h4 id="subscription-key-and-endpoint-url">Subscription Key and Endpoint URL</h4>
+<p>Ok, sorry for the tangent. Let&#39;s get back to the deployment. You&#39;ll need to keep track of a few pieces of data:</p>
+<p><img src="images/chapter5/deploy4.png" class="img-override" /></p>
+<p>First, take note of the <em>Subscription Key</em> at the top. Second, you&#39;ll need the web socket protocol base URL from the <em>WebSocket with the Speech Protocol/JavaScript WebSocket API</em> (wss://610e08d3ae4b4d4eb7d45dcf2e877698.api.cris.ai) for my deployment. </p>
+<blockquote>
+<p><strong>Don&#39;t Use MY Endpoint Base URL</strong></p>
+<p>Please don&#39;t copy my endpoint base URL. If you do, you&#39;ll get errors later on. Please copy your own.</p>
+</blockquote>
+<p>With these two values copied/saved, you&#39;re ready to move on to testing the endpoint.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
+
+<h3 id="testing-the-css-endpoint">Testing the CSS Endpoint</h3>
+<p>Now, let&#39;s return to the web app you deployed to Azure earlier and test your Custom Speech Service deployment. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Testing a CSS endpoint deployment
+</h4>
+
+<blockquote>
+<p><strong>Don&#39;t use your VM for this exercise</strong></p>
+<p>It&#39;s important that you don&#39;t use your VM for this exercise, because you&#39;ll be using your computer&#39;s microphone. This just doesn&#39;t work well through a remote desktop connection.</p>
+</blockquote>
+<p>Start by navigating to your deployed Azure web site. My URL was <a href="http://workshopwebapp.azurewebsites.net/">http://workshopwebapp.azurewebsites.net/</a>. </p>
+<p>After the page loads, paste your deployed CSS endpoint base URL into the <em>Endpoint</em> text box, and the subscription key into the <em>Subscription Key</em> text box:</p>
+<p><img src="images/chapter5/deploy5.png" class="img-override" /></p>
+<p>Ignore the LUIS-related fields, change the <em>Recognition Mode</em> drop down to <em>Dictation</em>, and <em>Format</em> to <em>Detailed Result</em>:</p>
+<p><img src="images/chapter5/deploy6.png" class="img-override" /></p>
+<p>Press the <em>Start</em> button and start speaking. The page may ask to access your microphone, and as you speak, the site will submit your speech to the CSS endpoint you created and return incremental speech results in real-time.</p>
+<p>Try speaking the phrase, &quot;Pikachu is a cool pokemon.&quot;:</p>
+<p><img src="images/chapter5/speech.gif" class="img-override" /></p>
+<p>Now, that&#39;s cool! As you speak, you&#39;ll see incremental results returned to you browser and displayed in the <em>Current hypothesis</em> area. Then, when the CSS recognizes the end of your utterance, it returns JSON-formatted result:</p>
+<pre><code class="lang-json">{
+   &quot;RecognitionStatus&quot;: &quot;Success&quot;,
+   &quot;Offset&quot;: 0,
+   &quot;Duration&quot;: 26300000,
+   &quot;NBest&quot;: [
+      {
+         &quot;Confidence&quot;: 0.923154,
+         &quot;Lexical&quot;: &quot;pikachu is a cool pokemon&quot;,
+         &quot;ITN&quot;: &quot;pikachu is a cool Pokémon&quot;,
+         &quot;MaskedITN&quot;: &quot;pikachu is a cool Pokémon&quot;,
+         &quot;Display&quot;: &quot;Pikachu is a cool Pokémon.&quot;
+      }
+   ]
+}
+{
+   &quot;RecognitionStatus&quot;: &quot;EndOfDictation&quot;,
+   &quot;Offset&quot;: 54210000,
+   &quot;Duration&quot;: 0
+}
+</code></pre>
+<p>The way this CSS endpoint works is that each time an utterance is detected, a JSON object is returned with <code>&quot;RecognitionStatus&quot;: &quot;Success&quot;</code>. Inside, it tracks the audio millisecond count that was sent, based on the <em>Offset</em> and <em>Duration</em>, meaning that at audio millisecond 0, the system detected an utterance beginning, and an utterance ending after 26300000 milliseconds.</p>
+<p>The CSS also returns the speech hypothesis in a variety of formats. The most meaningful is the <code>&quot;Display&quot;: &quot;Pikachu is a cool Pokémon.&quot;</code> result, which is the official transcription with a confidence % of 92.3154%.</p>
+<p>Pretty cool.</p>
+<p>Go ahead an try a few more phrases.</p>
+<h4 id="diving-into-the-web-page-code">Diving into the web page code</h4>
+<p>We&#39;re not going to dive into the JavaScript code that manages interacting with the Speech Protocol WebSocket endpoint. It&#39;s <em>really</em> complicated. You&#39;re welcome to dive into the details on your own, but it&#39;s out of scope for us today.</p>
+<blockquote>
+<p><strong>Challenge #6</strong></p>
+<p>Now that you have a full training to testing to real-world testing methodology for the CSS, try to stump your trained model. Then, return back to your data sets, models, and deployments. Update all of them and attempt to retrain the system to address the shortcomings you identified. </p>
+</blockquote>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
+<p>In this chapter, you learned:</p>
+<ul>
+<li>how to test your trained models with real-world data </li>
+<li>that a CSS deployment deploy various endpoints that are used in different scenarios</li>
+</ul>
 
 			</div>
 			<hr>
