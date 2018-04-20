@@ -57,7 +57,7 @@ In this year’s Global Azure Bootcamp, you’ll learn how to integrate Azure’
 * Chapter 4: Custom Speech Service Models
 * Chapter 5: Deploying Custom Speech Service Endpoints
 * Chapter 6: Introduction to Language Understanding (LUIS)
-* Chapter 7: Creating LUIS App Assets
+* Chapter 7: Building a LUIS App
 * Chapter 8: Publishing and Testing LUIS Endpoints
 * Chapter 9: Integrating LUIS into Your App
 
