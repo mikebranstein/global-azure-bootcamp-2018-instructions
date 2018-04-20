@@ -759,7 +759,7 @@ get really mad pikachu
 </ul>
 <h3 id="overview">Overview</h3>
 <p>After creating Custom Speech Service (CSS) data sets, you need to instruct CSS to train models based on these data sets. </p>
-<p>Training acoustic and language models is easy to do in the CSS portal - point and click. But, before we do that, we&#39;ll take a pit stop an establish a baseline accuracy of the CSS capabilities using Microsoft&#39;s base models.</p>
+<p>Training acoustic and language models is easy to do in the CSS portal - point and click. But, before we do that, we&#39;ll take a pit stop and establish a baseline accuracy of the CSS capabilities using Microsoft&#39;s base models.</p>
 <blockquote>
 <p><strong>Base Models - What Are They?</strong></p>
 <p>The CSS comes with several pre-trained acoustic and language models. In fact, there are different models for conversations and search/diction. If you stop to think about it, this makes a lot of sense. We tend to speak differently when we converse with others, as compared to dictating text or speaking search terms for a search engine. See below for the base models Microsoft provides.</p>
@@ -780,7 +780,7 @@ get really mad pikachu
 <ul>
 <li>Locale: en-US</li>
 <li>Subscription: <em>the one you created earlier</em></li>
-<li>Base Model: Microsoft Search and Diction Model, the select the base acoustic and base language models below</li>
+<li>Base Model: Microsoft Search and Diction Model, then select the base acoustic and base language models below</li>
 <li>Acoustic Data: Pokemon - Acoustic Data - Testing</li>
 </ul>
 <p><img src="images/chapter4/test2.png" class="img-override" /></p>
@@ -812,7 +812,7 @@ get really mad pikachu
 <li>Wink at me</li>
 </ul>
 <p>What&#39;s interesting is that aside from the Pokemon names, the CSS did a pretty good job. It got confused a bit about winking, but perhaps I didn&#39;t annunciate very well in the test files. We&#39;ll see later on.</p>
-<p>Another think to note is our testing data set is <em>SMALL</em>. Really small. In fact, there are only ~30 words in the entire data set. That&#39;s really too small, and for each word missed, we add ~3% word error rate. In a production system, we&#39;d want hundreds of utterances, and thousands of words in a testing data set. So, keep that in mind for future endeavors.</p>
+<p>Another thing to note is our testing data set is <em>SMALL</em>. Really small. In fact, there are only ~30 words in the entire data set. That&#39;s really too small, and for each word missed, we add ~3% word error rate. In a production system, we&#39;d want hundreds of utterances, and thousands of words in a testing data set. So, keep that in mind for future endeavors.</p>
 <p>This concludes the exercise. </p>
 <div class="exercise-end"></div>  
 
@@ -864,7 +864,7 @@ get really mad pikachu
 <p>Click the <em>Create New</em> button and complete the following fields:</p>
 <ul>
 <li>Locale: en-US</li>
-<li>Name: Pokemon - Acoustic Model</li>
+<li>Name: Pokemon - Language Model</li>
 <li>Description: <em>blank</em></li>
 <li>Base Language Model: Microsoft Search and Diction Model</li>
 <li>Language Data: Pokemon - Language Data - Training</li>
@@ -913,7 +913,7 @@ get really mad pikachu
 <p>This one was for everyone. And it&#39;s amazing.</p>
 <p>So, let&#39;s check back in on the accuracy test.</p>
 <p><img src="images/chapter4/test8.png" class="img-override" /></p>
-<p>Sweet! Look at that - 6% WER. I&#39;m ok with that (for now). Feel fee to explore the details of the accuracy test to learn more.</p>
+<p>Sweet! Look at that - 6% WER. I&#39;m ok with that (for now). Feel free to explore the details of the accuracy test to learn more.</p>
 <blockquote>
 <p><strong>Challenge #5</strong></p>
 <p>Try to get the accuracy test WER down to 0%. Enough said.</p>

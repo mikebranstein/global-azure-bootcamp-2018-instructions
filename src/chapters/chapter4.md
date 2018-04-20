@@ -9,7 +9,7 @@ In this chapter, you'll learn how to:
 
 After creating Custom Speech Service (CSS) data sets, you need to instruct CSS to train models based on these data sets. 
 
-Training acoustic and language models is easy to do in the CSS portal - point and click. But, before we do that, we'll take a pit stop an establish a baseline accuracy of the CSS capabilities using Microsoft's base models.
+Training acoustic and language models is easy to do in the CSS portal - point and click. But, before we do that, we'll take a pit stop and establish a baseline accuracy of the CSS capabilities using Microsoft's base models.
 
 > **Base Models - What Are They?**
 >
@@ -38,7 +38,7 @@ Click the *Create New* button to begin a test against an acoustic and language m
 Complete the following fields:
 - Locale: en-US
 - Subscription: *the one you created earlier*
-- Base Model: Microsoft Search and Diction Model, the select the base acoustic and base language models below
+- Base Model: Microsoft Search and Diction Model, then select the base acoustic and base language models below
 - Acoustic Data: Pokemon - Acoustic Data - Testing
 
 <img src="images/chapter4/test2.png" class="img-override" />
@@ -85,7 +85,7 @@ You should notice several mis-interpretations, as the CSS had trouble with:
 
 What's interesting is that aside from the Pokemon names, the CSS did a pretty good job. It got confused a bit about winking, but perhaps I didn't annunciate very well in the test files. We'll see later on.
 
-Another think to note is our testing data set is *SMALL*. Really small. In fact, there are only ~30 words in the entire data set. That's really too small, and for each word missed, we add ~3% word error rate. In a production system, we'd want hundreds of utterances, and thousands of words in a testing data set. So, keep that in mind for future endeavors.
+Another thing to note is our testing data set is *SMALL*. Really small. In fact, there are only ~30 words in the entire data set. That's really too small, and for each word missed, we add ~3% word error rate. In a production system, we'd want hundreds of utterances, and thousands of words in a testing data set. So, keep that in mind for future endeavors.
 
 This concludes the exercise. 
 
@@ -160,7 +160,7 @@ This page shows the various language models you've trained for the CSS.
 
 Click the *Create New* button and complete the following fields:
 - Locale: en-US
-- Name: Pokemon - Acoustic Model
+- Name: Pokemon - Language Model
 - Description: *blank*
 - Base Language Model: Microsoft Search and Diction Model
 - Language Data: Pokemon - Language Data - Training
@@ -232,7 +232,7 @@ So, let's check back in on the accuracy test.
 
 <img src="images/chapter4/test8.png" class="img-override" />
 
-Sweet! Look at that - 6% WER. I'm ok with that (for now). Feel fee to explore the details of the accuracy test to learn more.
+Sweet! Look at that - 6% WER. I'm ok with that (for now). Feel free to explore the details of the accuracy test to learn more.
 
 > **Challenge #5**
 >
