@@ -53,7 +53,7 @@ Note the *Status* of the test run is *NotStarted*. In a few moments, it will cha
 
 The test run may take some time to execute (up to 10 minutes). So, it's a good time to take a short break. Check back in 5.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SEXXES5v59o?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SEXXES5v59o?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 Hi, welcome back. I wish you had just won $1700. Will you settle for a lousy accuracy test?
 
@@ -128,7 +128,7 @@ Note the *Status* of the test run is *NotStarted*. In a few moments, it will cha
 
 The test run may take some time to execute (up to 10 minutes). So, it's a good time to take a short break. Check back in another 10.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/25ShHY0LMpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/25ShHY0LMpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 Hi, welcome back. My son *loves* these videos. 
 
@@ -180,7 +180,7 @@ Note the *Status* of the test run is *NotStarted*. In a few moments, it will cha
 
 The training process may take some time to execute (up to 10 minutes). So, it's a good time to take yet another short break. Check back in another 5.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8_lfxPI5ObM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8_lfxPI5ObM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 Welcome back, again. This video was for me. I *love* Tesla. Hopefully, I'll get one someday. Someday soon.
 
@@ -224,7 +224,7 @@ Note the *Status* of the test run is *NotStarted*. In a few moments, it will cha
 
 The test run may take some time to execute (up to 10 minutes). So, it's a good time to take a short break. Check back in 2.
 
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A0FZIwabctw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A0FZIwabctw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 This one was for everyone. And it's amazing.
 

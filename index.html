@@ -789,7 +789,7 @@ get really mad pikachu
 <p><img src="images/chapter4/test3.png" class="img-override" /></p>
 <p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
 <p>The test run may take some time to execute (up to 10 minutes). So, it&#39;s a good time to take a short break. Check back in 5.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SEXXES5v59o?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/SEXXES5v59o?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 <p>Hi, welcome back. I wish you had just won $1700. Will you settle for a lousy accuracy test?</p>
 <p>So, let&#39;s check back in on the accuracy test.</p>
@@ -842,7 +842,7 @@ get really mad pikachu
 <p><img src="images/chapter4/acoustic-model3.png" class="img-override" /></p>
 <p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
 <p>The test run may take some time to execute (up to 10 minutes). So, it&#39;s a good time to take a short break. Check back in another 10.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/25ShHY0LMpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/25ShHY0LMpE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 <p>Hi, welcome back. My son <em>loves</em> these videos. </p>
 <p>So, let&#39;s check back in on the model training:</p>
@@ -878,7 +878,7 @@ get really mad pikachu
 <p><img src="images/chapter4/lang-model3.png" class="img-override" /></p>
 <p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
 <p>The training process may take some time to execute (up to 10 minutes). So, it&#39;s a good time to take yet another short break. Check back in another 5.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8_lfxPI5ObM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/8_lfxPI5ObM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 <p>Welcome back, again. This video was for me. I <em>love</em> Tesla. Hopefully, I&#39;ll get one someday. Someday soon.</p>
 <p>So, let&#39;s check back in on the model training:</p>
@@ -908,7 +908,7 @@ get really mad pikachu
 <p><img src="images/chapter4/test7.png" class="img-override" /></p>
 <p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
 <p>The test run may take some time to execute (up to 10 minutes). So, it&#39;s a good time to take a short break. Check back in 2.</p>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A0FZIwabctw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div style="padding-left: 20px;"> <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/A0FZIwabctw?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> </div>
 
 <p>This one was for everyone. And it&#39;s amazing.</p>
 <p>So, let&#39;s check back in on the accuracy test.</p>
@@ -932,8 +932,44 @@ get really mad pikachu
 			<hr>
 			<div class="chapter">
 				<h2 id="deploying-custom-speech-service-endpoints">Deploying Custom Speech Service Endpoints</h2>
+<p>In this chapter, you&#39;ll learn how to:</p>
+<ul>
+<li>deploy your customized acoustic and language models and create a secured endpoint</li>
+<li>test the customized CSS endpoint using the web app you deployed earlier  </li>
+</ul>
 <h3 id="overview">Overview</h3>
+<p>Previously, you learned about the various data sets you need to train, test, and operationalize machine learning systems. Over the past 2 chapters, you created training and testing data sets, built customized acoustic and language models, then tested the customization accuracy.</p>
+<p>The next step is to deploy your customization and test them with real-world data.</p>
+<p>Let&#39;s get started!</p>
 <h3 id="deploying-custom-models">Deploying Custom Models</h3>
+<p>You&#39;ve already done the hard work of building the customized models, so let&#39;s use them to create a deployment.</p>
+<blockquote>
+<p><strong>PREREQUISITES</strong></p>
+<p>Before you proceed, you&#39;ll need a customized acoustic and language model that have a <em>Succeeded</em> status. If your models are still training, wait a few more minutes, then check back when the models are ready.</p>
+</blockquote>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Deploying customized acoustic and language models
+</h4>
+
+<p>Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, and navigate to <em>Deployments</em>. </p>
+<p>Click the <em>Create New</em> button to create a new deployment.</p>
+<p>Complete the following fields:</p>
+<ul>
+<li>Locale: en-US</li>
+<li>Description: <em>blank</em></li>
+<li>Name: Pokemon</li>
+<li>Subscription: <em>the one you created earlier</em></li>
+<li>Base Model: Microsoft Search and Diction Model, then select the Pokemon models below</li>
+</ul>
+<p><img src="images/chapter5/deploy1.png" class="img-override" /></p>
+<p>Click <em>Create</em> to deploy the models to production.</p>
+<p>When the test run is saved, you&#39;ll navigate back to the <em>Deployments</em> page:</p>
+<p><img src="images/chapter5/deploy2.png" class="img-override" /></p>
+<p>Note the <em>Status</em> of the test run is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
+<p>The deployment will not take long (up to 1 minute). That&#39;s it! You&#39;ve deployed your models.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div> 
+
 <h3 id="testing-the-custom-speech-service-endpoint">Testing the Custom Speech Service Endpoint</h3>
 
 			</div>
