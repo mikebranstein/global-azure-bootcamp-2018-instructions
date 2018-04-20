@@ -21,7 +21,7 @@ Training a LUIS app is easy. Seriously. I don't like to refer to machine learnin
     <b>Exercise</b>: Training your LUIS app 
 </h4>
 
-Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
+Log in to the LUIS portal at [https://www.luis.ai](https://www.luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
 
 In the upper-right corner, you'll see a *Train* button. Visually, the button will appear with a red dot when there are changes in the LUIS app that can be trained. Hovering over the button also indicates that it can untrained changes.
 
@@ -49,7 +49,7 @@ Let's test a few phrases that we may expect our app should handle.
     <b>Exercise</b>: Testing your LUIS app 
 </h4>
 
-Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
+Log in to the LUIS portal at [https://www.luis.ai](https://www.luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
 
 In the upper-right corner, you'll see a *Test* button. 
 
@@ -80,7 +80,7 @@ Let's jump right into publishing.
     <b>Exercise</b>: Publishing a LUIS app 
 </h4>
 
-Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
+Log in to the LUIS portal at [https://www.luis.ai](https://www.luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
 
 In the upper-right corner, you'll see a *PUBLISH* link. Click it: 
 

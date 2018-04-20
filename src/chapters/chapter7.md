@@ -17,7 +17,7 @@ I don't want to delay us too much, so let's dive right in by creating your first
     <b>Exercise</b>: Creating a LUIS App
 </h4>
 
-Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *My Apps* area:
+Log in to the LUIS portal at [https://www.luis.ai](https://www.luis.ai), and navigate to the *My Apps* area:
 
 <img src="images/chapter7/luis1.png" class="img-override" />
 
@@ -45,7 +45,7 @@ You'll recall that LUIS intents are represent actions the user wants to perform.
     <b>Exercise</b>: Creating LUIS intents
 </h4>
 
-Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *Intents* area by first navigating to the *My Apps* areas, drilling down into the *Pokemon* app:
+Log in to the LUIS portal at [https://www.luis.ai](https://www.luis.ai), and navigate to the *Intents* area by first navigating to the *My Apps* areas, drilling down into the *Pokemon* app:
 
 <img src="images/chapter7/luis3.png" class="img-override" />
 
@@ -142,7 +142,7 @@ Now that you know about entities, let's add the *Pokemon* entity.
     <b>Exercise</b>: Creating LUIS intents
 </h4>
 
-Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *Entities* area by first navigating to the *My Apps* areas, drilling down into the *Pokemon* app:
+Log in to the LUIS portal at [https://www.luis.ai](https://www.luis.ai), and navigate to the *Entities* area by first navigating to the *My Apps* areas, drilling down into the *Pokemon* app:
 
 <img src="images/chapter7/ent1.png" class="img-override" />
 
@@ -224,7 +224,7 @@ A list entity explicitly defines every value an entity can take, and only identi
     <b>Exercise</b>: Creating phrase lists to increase accuracy
 </h4>
 
-Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
+Log in to the LUIS portal at [https://www.luis.ai](https://www.luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
 
 Click on the *Phrase lists* navigation option:
 
