@@ -1249,8 +1249,50 @@ get really mad pikachu
 <div class="exercise-end"></div>
 
 <h3 id="adding-entities">Adding Entities</h3>
-<h3 id="mapping-intent-phrases">Mapping Intent Phrases</h3>
-<h3 id="improving-accuracy-with-phrase-lists">Improving Accuracy with Phrase Lists</h3>
+<p>After adding intents to your LUIS app, it&#39;s time to add entities. As you&#39;ll recall, an entity represents detailed information that is relevant in an utterance. For example, in the utterance &quot;Jigglypuff, stop singing&quot;, &quot;Jigglypuff&quot; is a Pokemon. By recognizing and labeling the entities that are mentioned in the user’s utterance, LUIS helps you choose the specific action to take to answer a user&#39;s request.</p>
+<h4 id="additional-entity-information">Additional entity information</h4>
+<p>There are a few important things about entities that are relevant, but we hadn&#39;t covered them yet. </p>
+<p>First, entities are optional but highly recommended.</p>
+<p>While intents are required, entities are optional. You do not need to create entities for every concept in your app, but only for those required for the app to take action.</p>
+<p>For example, as you begin to develop a machine learning pipeline that integrates LUIS, you may not have a need to identify details/entities to act upon. So, when starting off, don&#39;t add them. Then, as your app matures, you can slowly add entities. </p>
+<p>Second, entities are shared across intents. They don&#39;t belong to any single intent. Intents and entities can be semantically associated but it is not an exclusive relationship. This allows you to have a detail/entity be applicable across various intents. </p>
+<p>In the LUIS app you&#39;re building today, we&#39;ll be defining a <em>Pokemon</em> entity that can identify a Pokemon by name. Because each of our intents typically involves a particular Pokemon, the <em>Pokemon</em> entity will be shared across intents. This means that an intent/entity combination gives us a unique action to perform. </p>
+<p>For example, the &quot;Jigglypuff, sing.&quot; utterance yields the intent of <em>Sing</em> with an identified <em>Pokemon</em> entity of type <em>Jigglypuff</em>. </p>
+<h4 id="types-of-entities">Types of entities</h4>
+<p>LUIS has a variety of entity types, and each has a specific use. There are too many to dive into here, but I encourage you to learn more by reading the <a href="">LUIS documentation</a><a href="https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-entity-types#types-of-entities">https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-concept-entity-types#types-of-entities</a>.</p>
+<p>Now that you know about entities, let&#39;s add the <em>Pokemon</em> entity.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Creating LUIS intents
+</h4>
+
+<p>Log in to the LUIS portal at <a href="https://luis.ai">https://luis.ai</a>, and navigate to the <em>Entities</em> area by first navigating to the <em>My Apps</em> areas, drilling down into the <em>Pokemon</em> app:</p>
+<p><img src="images/chapter7/ent1.png" class="img-override" /></p>
+<p>This page lists the entities you have defined.</p>
+<p>Click the <em>Create new entity</em> button to create the <em>Pokemon</em> entity. Select <em>List</em> as the entity type:</p>
+<p><img src="images/chapter7/ent2.png" class="img-override" /></p>
+<blockquote>
+<p><strong>List Entities</strong></p>
+<p>A list entity is a fixed list of values. Each value is itself a list of synonyms or other forms the value may take. For example, a list entity named PacificStates include the values Washington, Oregon, California. The Washington value then includes both &quot;Washington&quot; and the abbreviation &quot;WA&quot;.</p>
+</blockquote>
+<p>After clicking the <em>Done</em> button, you&#39;re redirected to the <em>Pokemon</em> entity detail page. Add the following values:</p>
+<ul>
+<li>Pikachu</li>
+<li>Jigglypuff</li>
+<li>Meowth</li>
+</ul>
+<p>After adding these Pokemon, add synonyms for each, as shown below.</p>
+<p><img src="images/chapter7/ent2.png" class="img-override" /></p>
+<p>By adding these synonyms, you train LUIS to recognize the synonyms as the entity list value. For example, <em>bubble pokemon</em> will be recognized as a <em>Pokemon</em> entity, with <em>Jigglypuff</em> as the specific type.</p>
+<h4 id="validating-entity-mapping">Validating entity mapping</h4>
+<p>When you&#39;ve finished adding the entities and synonyms, refresh your browser.</p>
+<p>To validate that the entities are being properly recognized, navigate back to the <em>Intents</em> page, then open the detail page for an intent.</p>
+<p>You&#39;ll notice that text in each utterance is now replaced with a generic intent <em>Pokemon</em> block. You can use the <em>Entities view</em> toggle switch to see how utterance text maps to an entity:</p>
+<p><img src="images/chapter7/entity.gif" class="img-override" /></p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
+<p>That&#39;s it - you&#39;ve created intents and entities to help train your LUIS model to recognize Pokemon and an action you want the Pokemon to perform. </p>
+<p>In the next chapter, you&#39;ll train, test, and publish your LUIS model.</p>
 
 			</div>
 			<hr>
