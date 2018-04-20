@@ -1393,19 +1393,56 @@ LUIS may be unable to recognize rare and proprietary words, as well as foreign w
 <ul>
 <li>Pikachu sit down.</li>
 <li>Jigglypuff jump.</li>
-<li>Stopbeing so lou</li>
+<li>Stop being so loud Jigglypuff.</li>
 </ul>
-<p> train your LUIS app, integrating intents and entities into the trained app model:</p>
-<p><img src="images/chapter8/training.gif" class="img-override" /></p>
-<p>When training is finished, the <em>Train</em> button has a green dot:</p>
-<p><img src="images/chapter8/train1.png" class="img-override" /></p>
-<p>That&#39;s it. It was easy.</p>
+<p><img src="images/chapter8/test.gif" class="img-override" /></p>
+<p>That&#39;s it for testing in the LUIS portal. </p>
 <p>This concludes the exercise. </p>
 <div class="exercise-end"></div>
 
+<p>With a tested LUIS app that you&#39;re satisfied with, let&#39;s move on to publishing your LUIS app.</p>
+<h3 id="publishing-a-luis-app">Publishing a LUIS App</h3>
+<p>Let&#39;s jump right into publishing.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Publishing a LUIS app 
+</h4>
 
-<h3 id="publishing-a-luis-endpoint">Publishing a LUIS Endpoint</h3>
-
+<p>Log in to the LUIS portal at <a href="https://luis.ai">https://luis.ai</a>, and navigate to the <em>My Apps</em> areas, drilling down into the <em>Pokemon</em> app.</p>
+<p>In the upper-right corner, you&#39;ll see a <em>PUBLISH</em> link. Click it: </p>
+<p><img src="images/chapter8/pub1.png" class="img-override" /></p>
+<p>On the publishing page, there are a few things you can do:</p>
+<ul>
+<li>select whether you publish your trained LUIS app to a staging slot (for testing) or a production slot</li>
+<li>choose the timezone of the published app</li>
+<li>have LUIS return the all intent analysis results or only the highest ranking value</li>
+<li>incorporate Bing spell checker to auto-correct words submitted</li>
+<li>add resource / subscription keys</li>
+</ul>
+<blockquote>
+<p><strong>Intent Analysis Results</strong></p>
+<p>As you&#39;re getting started with LUIS, I recommend you have your LUIS apps return all of the identified intents, because it can aid in your debugging of complex intents and models. When you become more comfortable with LUIS and have a greater confidence in it&#39;s results, you&#39;ll want to disable returning ALL results. This si also especially important on lower-bandwidth apps (like mobile).</p>
+</blockquote>
+<blockquote>
+<p><strong>Bing spell checking</strong></p>
+<p>In many cases, I like to enable Bing spell checker, because I cannot guarantee that text coming into LUIS is valid. But, in your Pokemon app, you should not enable Bing spell checker because you&#39;re not guaranteed the CSS speech-to-text pipeline will return valid words, plus you don&#39;t know if <em>Pikachu</em> will be replaced by something else by Bing spell checker. </p>
+<p>A good rule of thumb: if you&#39;re using a speech-domain that could have strange words present, don&#39;t use Bing spell checker. </p>
+</blockquote>
+<p>We&#39;ll be publishing directly to production, so select <em>Production</em> and <em>Eastern</em> time zones. </p>
+<p>Before you click the <em>Publish to Production</em> button, scroll down a bit further and click the <em>Add Key</em> button.</p>
+<p><img src="images/chapter8/pub3.png" class="img-override" /></p>
+<p>Select your Azure tenant, subscription, and the LUIS subscription you created in an earlier chapter and add the key.</p>
+<p>This adds your LUIS subscription to the LUIS app you just created and allows you to deploy your app to that subscription.</p>
+<p>After add the LUIS subscription, you can click the <em>Publish to Production</em> button:</p>
+<p><img src="images/chapter8/pub2.png" class="img-override" /></p>
+<p>It will take a few minutes for LUIS to publish your app to the LUIS subscriptions you entered.</p>
+<p>When it&#39;s finished, take note of two values below: the LUIS endpoint base URL and the Key String. For my LUIS app deployment, mine are:</p>
+<ul>
+<li>LUIS endpoint base URL: <a href="https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/6f0e678b-212c-4d4e-b0cc-967cb57f0a3a">https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/6f0e678b-212c-4d4e-b0cc-967cb57f0a3a</a>
+Key String: 4a580409############ad344e6f25 (some obscured)</li>
+</ul>
+<p>You&#39;ll need these values int he final chapter to test it all out!</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
 			</div>
 			<hr>
 			<div class="chapter">
