@@ -44,7 +44,202 @@ Now that you know about the different types of data, you'll be creating training
 
 ### Acoustic Training data sets
 
+In a previous chapter, you learned about acoustic models. 
+
+> **Acoustic Model**
+>
+> The acoustic model is a classifier that labels short fragments of audio into one of a number of phonemes, or sound units, in a given language. For example, the word “speech” is comprised of four phonemes “s p iy ch”. 
+
+To build acoustic models, you need acoustic data sets. An acoustic data set consists of two parts: 
+
+1. a set of audio files containing the speech data
+2. a file containing the transcriptions of all audio files
+
+#### Audio File Format and Recommendations
+
+To build testing acoustic audio data for the Custom Speech Service, you should adhere to the following guidelines:
+
+- All audio files in the data set should be stored in the WAV (RIFF) audio format.
+- The audio must have a sampling rate of 8 kHz or 16 kHz and the sample values should be stored as uncompressed PCM 16-bit signed integers (shorts).
+- Only single channel (mono) audio files are supported.
+- The audio files must be between 100ms and 1 minute in length. Each audio file should ideally start and end with at least 100ms of silence, and somewhere between 500ms and 1 second is common.
+- If you have background noise in your data, it is recommended to also have some examples with longer segments of silence, e.g. a few seconds, in your data, before and/or after the speech content.
+- Each audio file should consist of a single utterance, e.g. a single sentence for dictation, a single query, or a single turn of a dialog system.
+- Each audio file to in the data set should have a unique filename and the extension “wav”.
+- The set of audio files should be placed in a single folder without subdirectories and the entire set of audio files should be packaged as a single ZIP file archive.
+
+> **Holy Audio Requirements, Batman!**
+>
+> Yeah. This is a lot to take in. Don't worry. I've already built the audio files for you. We'll take a look in a bit.
+
+#### Audio File Transcriptions
+
+The second component of acoustic data is a text file containing transcripts of each audio file. 
+
+The transcriptions for all WAV files should be contained in a single plain-text file. Each line of the transcription file should have the name of one of the audio files, followed by the corresponding transcription. The file name and transcription should be separated by a tab (\t). Each line must end with a line feed and new line character (\r\n).
+
+For example:
+
+```
+speech01.wav    speech recognition is awesome
+speech02.wav    the quick brown fox jumped all over the place
+speech03.wav    the lazy dog was not amused
+```
+
+The transcriptions should be text-normalized so they can be processed by the system. However, there are some very important normalizations that must be done by the user prior to uploading the data to the Custom Speech Service. The [normalization rules](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-speech-service/customspeech-how-to-topics/cognitive-services-custom-speech-transcription-guidelines) are too lengthy to cover here, so you should check them out on your own. It may seem like a lot at first, but i've found it fairly straight-forward and I was quickly able to learn and apply them regularly.
+
+#### Prepping your acoustic data for the CSS portal
+
+In the source code you downloaded from Github, you'll find the training audio files and an audio transcript of the files in the *custom-speech-service-data/training* folder:
+
+<img src="images/chapter3/acoustic-training-data.png" class="img-override" />
+
+> **Pokemon!**
+>
+> You may have noticed the file names of the acoustic data are Pokemon. My son and I have recently started to play Pokemon the Card Game together, so I thought this would be a fun way (and topic) to teach you about speech recognition. After all, Pokemon names *are* difficult to pronounce, and are a domain-specific language of their own. They're a perfect match for the capabilities of the Custom Speech Service.
+
+Let's get started by uploading an acoustic data set to the CSS portal.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Uploading an acoustic data set to the CSS portal
+</h4>
+
+Start by locating the acoustic .wav audio files. Select the 17 audio files, zip them up, and name the zip file *training-utterances.zip*.
+
+<img src="images/chapter3/training-utterances.gif" class="img-override" />
+
+Next, navigate to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>.
+
+Click the *Sign In* link in the upper right and sign in with your Azure portal subscription login.
+
+After logging in, click on the *Custom Speech* navigation option and navigate to *Adpatation Data*:
+
+<img src="images/chapter3/adaptation-data.png" class="img-override" />
+
+At the top of the *Adaptation Data* page, will be an area for *Acoustic Datasets*. 
+
+<img src="images/chapter3/import1.png" class="img-override" />
+
+Click the *Import* button and complete the following fields:
+- Name: Pokemon - Acoustic Data - Training
+- Description *blank*
+- Locale: en-US
+- Transcriptions file (.txt): upload the *training-utterances.txt* file
+- Audio files (.zip): upload the *training-utterances.zip* file you created earlier
+
+<img src="images/chapter3/import-acoustic-data.png" class="img-override" />
+
+Click *Import* to upload the acoustic data and build the data set.
+
+When the data is uploaded, you'll navigate back to the *Acoustic Datasets* page and your data set will be displayed in the grid:
+
+<img src="images/chapter3/import3.png" class="img-override" />
+
+Note the *Status* of the acoustic dataset is *NotStarted*. In a few moments, it will change to *Running*:
+
+<img src="images/chapter3/import4.png" class="img-override" />
+
+When you upload acoustic data, the CSS will analyze the data, checking it for errors, and to ensure the transcription file matches the uploaded audio filenames. There are a variety of other checks that are performed that aren't important, but it's good to know that there is some post-processing that needs to occur before you can use the acoustic data set.
+
+When the CSS finishes analyzing and validating the acoustic data, the *Status* will change to *Succeeded*:
+
+<img src="images/chapter3/import5.png" class="img-override" />
+
+Congratulations! You've created your first acoustic data set. We'll be using it later in this chapter.
+
+> **Curious? ...and Challenge #1**
+>
+> If you're wondering what the audio files sound like, don't hesitate to download them to your computer and play them. Just remember that playing the audio files on the VM we've created for the workshop probably won't work, so you'll have to download the files to your actual computer.
+>
+> If you're in the mood for a challenge, augment the training data by adding your own audio files. I've found the open-source software [Audacity](https://www.audacityteam.org/) to be a great tool for recording, editing, and exporting audio files in the right format. I suggest creating a few sample audio utterances relating to your favorite Pokemon (or try [Charizard](https://wiki.kidzsearch.com/wiki/Charizard)).
+>
+> <img src="images/chapter3/charizard.png" class="img-small" />
+>
+> If you do add to the acoustic data set, don't forget to transcribe your audio and add the transcription to the *training-utterances.txt* file!
+
+This concludes the exercise. 
+
+<div class="exercise-end"></div> 
+
 ### Language Training data sets
+
+Now that you've created an acoustic data set, let's build a language data set. As you'll recall from a previous chapter, language models and language data sets teach the CSS the likelihood of encountering certain words or phrases. 
+
+> **Language Model**
+>
+> The language model is a probability distribution over sequences of words. The language model helps the system decide among sequences of words that sound similar, based on the likelihood of the word sequences themselves. For example, “recognize speech” and “wreck a nice beach” sound alike but the first hypothesis is far more likely to occur, and therefore will be assigned a higher score by the language model.
+
+#### Language Data Sets
+
+To create a custom language data set for your application, you need to provide a list of example utterances to the system, for example:
+
+- "pikachu please sit down"
+- "don't sing jigglypuff you'll put me to sleep"
+- "meowth put away those sharp claws"
+
+The sentences do not need to be complete sentences or grammatically correct, and should accurately reflect the spoken input you expect the system to encounter in deployment. These examples should reflect both the style and content of the task the users will perform with your application.
+
+The language model data should be written in plain-text file using either the US-ASCII or UTF-8, depending of the locale. For en-US, both encodings are supported. The text file should contain one example (sentence, utterance, or query) per line.
+
+If you wish some sentences to have a higher weight (importance), you can add it several times to your data. A good number of repetitions is between 10 - 100. If you normalize it to 100 you can weight sentence relative to this easily.
+
+> **More Rules!**
+>
+> Don't worry about these rules for now, because we've already assembled a collection of utterances appropriate for our needs today.
+
+Before we get started, take a look at the utterances in the *training-language-model-data.txt* file. Here's a short except:
+
+```
+ash's best friend should sit down
+sit pikachu
+sit on the floor pikachu
+have a seat meowth
+meowth please sit on the ground
+i'd like to see ash's best friend act angry
+get really mad pikachu
+``` 
+
+You'll notice that this is a collection of commands. This is of importance and significance. Later in the workshop, you'll be using the Language Understanding (LUIS) service to analyze the intent of spoken commands. So, it makes sense that the language model we'll be building contains commands.
+
+#### Creating a Language Data Set
+
+Now that you know what is in a language data set, let's head over to the CSS portal and create one.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Uploading a language data set to the CSS portal
+</h4>
+
+Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, then navigate back to the *Adaptation Data* page.
+
+Scroll down past the *Acoustic Datasets* area, and you'll find the *Language Datasets* area:
+
+<img src="images/chapter3/lang1.png" class="img-override" />
+
+Click the *Import* button and complete the following fields:
+- Name: Pokemon - Language Data - Training
+- Description *blank*
+- Locale: en-US
+- Language data file (.txt): upload the *training-language-model-data.txt* file
+
+<img src="images/chapter3/lang2.png" class="img-override" />
+
+Click *Import* to upload the language data and build the data set.
+
+When the data is uploaded, you'll navigate back to the *Language Datasets* page and your data set will be displayed in the grid:
+
+<img src="images/chapter3/lang3.png" class="img-override" />
+
+Note the *Status* of the language data set is *NotStarted*. In a few moments, it will change to *Running*, the *Succeeded*, just like the acoustic data set did.
+
+Congratulations! You've created your first language data set. We'll be using it later in this chapter.
+
+> **Challenge #2**
+>
+> Just like you did for the acoustic data set, feel fee to augment the utterances I built. I suggest continuing to create utterances related to the Pokemon you added in the last challenge.
+
+This concludes the exercise. 
+
+<div class="exercise-end"></div> 
 
 ### Pronunciation Training data sets
 
