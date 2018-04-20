@@ -663,7 +663,89 @@ get really mad pikachu
 <div class="exercise-end"></div> 
 
 <h3 id="pronunciation-training-data-sets">Pronunciation Training data sets</h3>
+<p>Now that you&#39;ve created acoustic and language data sets, you could be ready to move on to designing the models for each. But, there&#39;s another customization you can provide that helps to train you model in a special way: pronunciation data.</p>
+<p>Custom pronunciation enables users to define the phonetic form and display of a word or term. It is useful for handling customized terms, such as product names or acronyms. All you need is a pronunciation file (a simple .txt file).</p>
+<p>Here&#39;s how it works. In a single .txt file, you can enter several custom pronunciation entries. The structure is as follows:</p>
+<pre><code>Display form &lt;Tab&gt;(\t) Spoken form &lt;Newline&gt;(\r\n)
+</code></pre><h4 id="requirements-for-the-spoken-form">Requirements for the spoken form</h4>
+<p>The spoken form must be lowercase, which can be forced during the import. In addition, you must provide checks in the data importer. No tab in either the spoken form or the display form is permitted. There might, however, be more forbidden characters in the display form (for example, ~ and ^).</p>
+<p>Each .txt file can have several entries. For example, see the following screenshot:</p>
+<p><img src="images/chapter3/custom-speech-pronunciation-file.png" class="img-override" /></p>
+<p>The spoken form is the phonetic sequence of the display form. It is composed of letters, words, or syllables. Currently, there is no further guidance or set of standards to help you formulate the spoken form.</p>
+<h4 id="when-to-use-pronunciation-data">When to use Pronunciation data</h4>
+<p>I&#39;ve found it useful to use pronunciation in a variety of circumstances. In the above example, pronunciation helps transform <em>three c p 0</em> to <em>3CPO</em>. I&#39;ve also used it in the past to transform <em>a t and t</em> to <em>AT&amp;T</em>, and <em>microsoft dot com</em> to <em>Microsoft.com</em>.</p>
+<h4 id="adding-a-pronunciation-data-set">Adding a Pronunciation Data Set</h4>
+<p>For your final data set, you&#39;ll create a pronunciation data set. Let&#39;s get to it!</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Uploading a pronunciation data set to the CSS portal
+</h4>
+
+<p>Start by navigating to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, then navigate back to the <em>Adaptation Data</em> page.</p>
+<p>Scroll down past the <em>Language Datasets</em> area, and you&#39;ll find the <em>Pronunciation Datasets</em> area:</p>
+<p><img src="images/chapter3/pro1.png" class="img-override" /></p>
+<p>Click the <em>Import</em> button and complete the following fields:</p>
+<ul>
+<li>Name: Pokemon - Pronunciation Data - Training</li>
+<li>Description <em>blank</em></li>
+<li>Locale: en-US</li>
+<li>Language data file (.txt): upload the <em>training-pronunciation-data.txt</em> file</li>
+</ul>
+<p><img src="images/chapter3/pro2.png" class="img-override" /></p>
+<p>Click <em>Import</em> to upload the pronunciation data and build the data set.</p>
+<p>When the data is uploaded, you&#39;ll navigate back to the <em>Pronunciation Datasets</em> page and your data set will be displayed in the grid:</p>
+<p><img src="images/chapter3/pro3.png" class="img-override" /></p>
+<p>Note the <em>Status</em> of the language data set is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, the <em>Succeeded</em>, just like the acoustic data set did.</p>
+<p>Congratulations! You&#39;ve created your first pronunciation data set. We&#39;ll be using it in the next chapter.</p>
+<blockquote>
+<p><strong>Challenge #3</strong></p>
+<p>I bet you can&#39;t guess what this challenge is about... This is a more difficult challenge, probably. That&#39;s because you don&#39;t really know about your problem domain yet. Typically, you add pronunciation data sets once you know more about your problem domain that you&#39;re trying to train for. But, if you think you can add something to what we already have, go for it!</p>
+</blockquote>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div> 
+
 <h3 id="acoustic-testing-data-sets">Acoustic Testing data sets</h3>
+<p>You&#39;ll recall earlier in this chapter that there are multiple types of data sets we&#39;ll need: training, testing, and real-world. </p>
+<p>So far, you&#39;ve created 3 training data sets: acoustic, language, and pronunciation. Next, you&#39;ll need to create a testing data set.</p>
+<h4 id="testing-data-sets-are-acoustic-data-sets">Testing Data Sets are Acoustic Data Sets</h4>
+<p>Here&#39;s a secret - testing data sets for the CSS <em>are</em> acoustic data sets. And here&#39;s why. Think about it - an acoustic data set provides audio files, with transcriptions of the audio file content. As a result, an acoustic data set is ideal for testing because it includes audio files, and their actual content.</p>
+<p>Now, we have to be a bit careful, because it&#39;s easy to confuse your training and testing data sets because they are both acoustic data sets. So, as we create a second acoustic data set, we&#39;ll be sure to name it properly - with <em>testing</em> in it&#39;s name. </p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Creating a testing acoustic data set
+</h4>
+
+<p>Start by locating the testing files we included in the workshop files. You&#39;ll find 6 .wav audio files in the <em>custom-speech-service-data/testing</em> folder:</p>
+<p><img src="images/chapter3/files.ong" class="img-override" /></p>
+<p>Select the 6 audio files, zip them up, and name the zip file <em>testing-utterances.zip</em>.</p>
+<p><img src="images/chapter3/testing-utterances.gif" class="img-override" /></p>
+<p>Next, navigate to the CSS web portal at <a href="https://cris.ai" target="_blank">https://cris.ai</a>, and navigate to <em>Adpatation Data</em>.</p>
+<p>Click the <em>Import</em> button by <em>Acoustic Datasets</em> and complete the following fields:</p>
+<ul>
+<li>Name: Pokemon - Acoustic Data - Testing</li>
+<li>Description <em>blank</em></li>
+<li>Locale: en-US</li>
+<li>Transcriptions file (.txt): upload the <em>testing-acoustic-model-data.txt</em> file</li>
+<li>Audio files (.zip): upload the <em>testing-utterances.zip</em> file you created earlier</li>
+</ul>
+<p><img src="images/chapter3/testing2.png" class="img-override" /></p>
+<p>Click <em>Import</em> to upload the acoustic data and build the data set.</p>
+<p>When the data is uploaded, you&#39;ll navigate back to the <em>Acoustic Datasets</em> page and your data set will be displayed in the grid:</p>
+<p><img src="images/chapter3/testing3.png" class="img-override" /></p>
+<p>Note the <em>Status</em> of the acoustic dataset is <em>NotStarted</em>. In a few moments, it will change to <em>Running</em>, then <em>Succeeded</em>.</p>
+<p>Congratulations! You&#39;ve created your testing acoustic data set. </p>
+<blockquote>
+<p><strong>Challenge #4</strong></p>
+<p>Yes. Again. Feel free to augment the testing data set you just created. Remember - don&#39;t overlap training/testing data, and make the data similar enough. For example, if you added <em>Charizard</em> to your training data sets, it would be a good idea to test for <em>Charizard</em>. Likewise, if you didn&#39;t add another pokemon, like <em>Chespin</em>, you shouldn&#39;t expect the CSS to magically recognize it.</p>
+<p><img src="images/chapter3/chespin.png" class="img-small" /></p>
+</blockquote>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div> 
+
+<p>Phew! That was a long chapter! But, you learned quite a bit, like:</p>
+<ul>
+<li>the importance of separating training data from testing data</li>
+<li>that acoustic data is a combination of .wav files and normalized text transcripts</li>
+<li>pronunciation data sets can help your CSS models interpret multi-word phrases into an abbreviation - like 3CPO</li>
+</ul>
 
 			</div>
 			<hr>
