@@ -3,6 +3,7 @@
 In this chapter, you'll learn:
 - how to build intents
 - how to create entities and map them to intent phrases
+- how phrase lists can help increase accuracy
 
 ### Overview
 
@@ -180,8 +181,83 @@ This concludes the exercise.
 
 <div class="exercise-end"></div>
 
-That's it - you've created intents and entities to help train your LUIS model to recognize Pokemon and an action you want the Pokemon to perform. 
+### Increasing Accuracy with Phrase Lists
 
-In the next chapter, you'll train, test, and publish your LUIS model.
+Now that you've added intents and entities, let's explore a quick way to improve the accuracy of your LUIS app with phrase lists.
+
+#### What is a phrase list?
+
+A phrase list includes a group of values (words or phrases) that belong to the same class and must be treated similarly (for example, names of cities or products). What LUIS learns about one of them is automatically applied to the others as well. This is not a white list of matched words.
+
+In other words, a phrase list can help you better identify an intent or entity in a more dynamic manner.
+
+#### How to use phrase lists
+
+For example, in a travel agent app, you can create a phrase list named "Cities" that contains the values London, Paris, and Cairo. If you label one of these values as an entity, LUIS learns to recognize the others.
+
+A phrase list may be interchangeable or non-interchangeable. An interchangeable phrase list is for values that are synonyms, and a non-interchangeable phrase list is intended for values that aren't synonyms but are similar in another way.
+
+There are two rules of thumb to keep in mind when using phrase lists:
+
+1. Use phrase lists for terms that LUIS has difficulty recognizing. Phrase lists are a good way to tune the performance of your LUIS app. If your app has trouble classifying some utterances as the correct intent, or recognizing some entities, think about whether the utterances contain unusual words, or words that might be ambiguous in meaning. These words are good candidates to include in a phrase list feature.
+
+2. Use phrase lists for rare, proprietary, and foreign words.
+LUIS may be unable to recognize rare and proprietary words, as well as foreign words (outside of the culture of the app), and therefore they should be added to a phrase list feature. This phrase list should be marked non-interchangeable, to indicate that the set of rare words form a class that LUIS should learn to recognize, but they are not synonyms or interchangeable with each other.
+
+> **A note on using phrase lists**
+>
+> A phrase list feature is not an instruction to LUIS to perform strict matching or always label all terms in the phrase list exactly the same. It is simply a hint. For example, you could have a phrase list that indicates that "Patti" and "Selma" are names, but LUIS can still use contextual information to recognize that they mean something different in "make a reservation for 2 at patti's diner for dinner" and "give me driving directions to selma, georgia".
+
+#### When to use phrase lists instead of list entities
+
+After learning about phrase lists, you may be confused on whether to use these, or to use a list entity.
+
+With a phrase list, LUIS can still take context into account and generalize to identify items that are similar to, but not an exact match, as items in a list. If you need your LUIS app to be able to generalize and identify new items in a category, it's better to use a phrase list. When you want to be able to recognize new instances of an entity, like a meeting scheduler that should recognize the names of new contacts, or an inventory app that should recognize new products, use another type of machine learned entity such as a simple or hierarchical entity. Then create a phrase list of words and phrases. This list guides LUIS to recognize examples of the entity by adding additional significance to the value of those words.
+
+A list entity explicitly defines every value an entity can take, and only identifies values that match exactly. A list entity may be appropriate for an app in which all instances of an entity are known and don't change often, like the food items on a restaurant menu that changes infrequently.
+
+> **LUIS Best practice**
+>
+> After the model's first iteration, add a phrase list feature that has domain-specific words and phrases. This feature helps LUIS adapt to the domain-specific vocabulary, and learn it fast.
+
+<h4 class="exercise-start">
+    <b>Exercise</b>: Creating phrase lists to increase accuracy
+</h4>
+
+Log in to the LUIS portal at [https://luis.ai](https://luis.ai), and navigate to the *My Apps* areas, drilling down into the *Pokemon* app.
+
+Click on the *Phrase lists* navigation option:
+
+<img src="images/chapter7/phrase1.png" class="img-override" />
+
+Click the *Create new phrase list* button to create a phrase list.
+
+You'll be using the phrase list feature to create a phrase list for each of our intents. This is a good idea because our intents like *Sit* and *Jump* are fairly generic, and you can describe each of these intents in a variety of ways. For example, "sit down" and "grab a chair" are different utterances that have the same intent: *Sit*.
+
+Add a phrase list named *Sit*, and either type in a variety of synonyms for sit, or use the *Recommend* option to help identify a list of words that are related to sitting:
+
+<img src="images/chapter7/phrase.gif" class="img-override" />
+
+I added the following options to my phrase lists, feel free to create your own, add more, subtract some, but be sure to create a phrase list for each intent:
+
+- Sit: sit, lie, rest, be seated, sits, sitting, stay, relax, take a seat, to stay 
+- Wave: wave, signal, waves, sign, gesticulate 
+- Sing: sing, singing, sings, chant, sang 
+- Jump: jump, skip, hop, jumping, jumps, bounce, leap, jumped 
+- Wink: wink, smile, grin, twinkle, winks 
+- Scratch: scratch, scrape, rub, scratching, graze, scratches, scratched
+- ActAngry: angry, annoyed, enraged, frustrated, angered, irate, angers, sad, irritated, fuming 
+
+When you're finished, your phrase lists should look like this:
+
+<img src="images/chapter7/phrase2.png" class="img-override" />
+
+This concludes the exercise. 
+
+<div class="exercise-end"></div>
+
+That's it - you've created intents and entities to help train your LUIS app to recognize Pokemon and an action you want the Pokemon to perform. You've also added phrase lists to help train your app to respond and identify intents more efficiently.
+
+In the next chapter, you'll train, test, and publish your LUIS app.
 
 
