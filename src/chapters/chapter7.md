@@ -32,6 +32,8 @@ After creating the app, you be redirected to the *Intent* page automatically:
 
 <img src="images/chapter7/luis3.png" class="img-override" />
 
+There's not much more to creating the initial LUIS app, so let's continue on with defining your app intents.
+
 This concludes the exercise. 
 
 <div class="exercise-end"></div>
