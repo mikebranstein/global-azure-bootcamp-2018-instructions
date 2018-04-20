@@ -123,8 +123,10 @@ When it's finished, take note of two values below: the LUIS endpoint base URL an
 - LUIS endpoint base URL: https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/6f0e678b-212c-4d4e-b0cc-967cb57f0a3a
 Key String: 4a580409############ad344e6f25 (some obscured)
 
-You'll need these values int he final chapter to test it all out!
+You'll need these values in the final chapter to test it all out!
 
 This concludes the exercise. 
 
 <div class="exercise-end"></div>
+
+

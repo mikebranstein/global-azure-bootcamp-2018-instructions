@@ -1440,13 +1440,130 @@ LUIS may be unable to recognize rare and proprietary words, as well as foreign w
 <li>LUIS endpoint base URL: <a href="https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/6f0e678b-212c-4d4e-b0cc-967cb57f0a3a">https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/6f0e678b-212c-4d4e-b0cc-967cb57f0a3a</a>
 Key String: 4a580409############ad344e6f25 (some obscured)</li>
 </ul>
-<p>You&#39;ll need these values int he final chapter to test it all out!</p>
+<p>You&#39;ll need these values in the final chapter to test it all out!</p>
 <p>This concludes the exercise. </p>
 <div class="exercise-end"></div>
+
+
+
 			</div>
 			<hr>
 			<div class="chapter">
 				<h2 id="integrating-luis-into-your-apps">Integrating LUIS into Your Apps</h2>
+<p>In the final chapter of the workshop, you&#39;ll learn:</p>
+<ul>
+<li>how to integrate LUIS into an app</li>
+</ul>
+<h3 id="overview">Overview</h3>
+<p>With a published app, you&#39;re ready to get LUIS into the Speech Recognition website you deployed to Azure earlier in the workshop.</p>
+<p>Before you jump into testing, let&#39;s learn how to access LUIS endpoints.</p>
+<h4 id="luis-rest-api">LUIS REST API</h4>
+<p>LUIS is exposed as a REST API endpoint and can be accessed right from your web browser, or through your favorite REST API testing software. I like to use <a href="https://www.getpostman.com/">Postman</a>.</p>
+<p>Let&#39;s test out your LUIS endpoint.</p>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Testing out your LUIS endpoint with Postman
+</h4>
+
+<p>Start by downloading and installing <a href="https://www.getpostman.com/">Postman</a> on the Azure VM you&#39;ve been using today.</p>
+<p>After Postman is installed, close out of all the windows/popups it shows on startup, and you should see a screen like this:</p>
+<p><img src="images/chapter9/postman1.png" class="img-override" /></p>
+<p>Navigate back to the LUIS portal and copy the URL next to your LUIS subscription on the <em>Publish</em> page of your <em>Pokemon</em> app:</p>
+<p><img src="images/chapter9/copy-link.gif" class="img-override" /></p>
+<p>Paste the link into the HTTP GET textbox in Postman, then click the <em>Params</em> button. Next to the <em>q</em> query string parameter, type in <em>pikachu sit down on the ground</em>, then click the <em>Send</em> button:</p>
+<p><img src="images/chapter9/send.gif" class="img-override" /></p>
+<p>The HTTP response will be displayed in the <em>Body</em> area below. My response in included below. I&#39;ll let you examine the HTTP response from LUIS on your own.</p>
+<pre><code class="lang-json">{
+    &quot;query&quot;: &quot;pikachu sit down on the ground&quot;,
+    &quot;topScoringIntent&quot;: {
+        &quot;intent&quot;: &quot;Sit&quot;,
+        &quot;score&quot;: 0.956479847
+    },
+    &quot;intents&quot;: [
+        {
+            &quot;intent&quot;: &quot;Sit&quot;,
+            &quot;score&quot;: 0.956479847
+        },
+        {
+            &quot;intent&quot;: &quot;ActAngry&quot;,
+            &quot;score&quot;: 0.0324947946
+        },
+        {
+            &quot;intent&quot;: &quot;Sing&quot;,
+            &quot;score&quot;: 0.00468421541
+        },
+        {
+            &quot;intent&quot;: &quot;Wave&quot;,
+            &quot;score&quot;: 0.00439580763
+        },
+        {
+            &quot;intent&quot;: &quot;None&quot;,
+            &quot;score&quot;: 0.00238293572
+        },
+        {
+            &quot;intent&quot;: &quot;Scratch&quot;,
+            &quot;score&quot;: 0.00228275615
+        },
+        {
+            &quot;intent&quot;: &quot;Jump&quot;,
+            &quot;score&quot;: 0.00204163464
+        },
+        {
+            &quot;intent&quot;: &quot;Wink&quot;,
+            &quot;score&quot;: 0.00131020416
+        }
+    ],
+    &quot;entities&quot;: [
+        {
+            &quot;entity&quot;: &quot;pikachu&quot;,
+            &quot;type&quot;: &quot;Pokemon&quot;,
+            &quot;startIndex&quot;: 0,
+            &quot;endIndex&quot;: 6,
+            &quot;resolution&quot;: {
+                &quot;values&quot;: [
+                    &quot;Pikachu&quot;
+                ]
+            }
+        }
+    ]
+}
+</code></pre>
+<p>As you can see, LUIS returns the query we passed <em>pikachu sit down on the ground</em>, and all of the intents it believes are applicable, with associated confidence percentages. It also selects the top-ranking intent and displays it separately. Finally, LUIS returns any entities it identifies, and indicates where in the query the entity occurred.</p>
+<p>Pretty cool, and easy to use. </p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
+<p>Now that you understand how to send data to LUIS via an HTTP GET and what the output of a LUIS request looks like, let&#39;s jump into the web site you published to Azure.</p>
+<h3 id="testing-luis-through-the-speech-recognition-web-app">Testing LUIS through the Speech Recognition web app</h3>
+<h4 class="exercise-start">
+    <b>Exercise</b>: Testing LUIS in your web app
+</h4>
+
+<p>Return to your laptop, not the VM you&#39;ve bee using. Navigate to the Speech recognition web app you published to Azure earlier. My URL was <a href="https://workshopwebapp.azurewebsites.net/">https://workshopwebapp.azurewebsites.net/</a>.</p>
+<p>This time, enter your CSS endpoint URL, CSS Subscription key, check the LUIS checkbox, and add your LUIS endpoint base URL, and LUIS subscription key.</p>
+<p><img src="images/chapter9/site1.png" class="img-override" /></p>
+<blockquote>
+<p><strong>LUIS Endpoint base URL</strong></p>
+<p>The LUIS endpoint URL should be everything before the query string in the LUIS endpoint URL. For example, mine is <a href="https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/6f0e678b-212c-4d4e-b0cc-967cb57f0a3a">https://eastus.api.cognitive.microsoft.com/luis/v2.0/apps/6f0e678b-212c-4d4e-b0cc-967cb57f0a3a</a>. Do not include the query string.</p>
+</blockquote>
+<p>With LUIS enabled on the web site, test it out. Using the <em>Start</em> and <em>Stop</em> buttons, speak a few phrases:</p>
+<ul>
+<li>pikachu sit down</li>
+<li>jigglypuff don&#39;t sing that loud, i&#39;m trying to sleep</li>
+</ul>
+<p>Check out the results!</p>
+<p><img src="images/chapter9/speak.gif" class="img-override" /></p>
+<p>Sweet!</p>
+<p>Now, how does it all work? Well, I&#39;ll let you check out the JavaScript code on your own in the MVC app. Here&#39;s a hint: check out the <code>UpdateRecognizedPhrase</code> JavaScript function in the Index.cshtml view.</p>
+<p>This concludes the exercise. </p>
+<div class="exercise-end"></div>
+
+<p>Wow. So, we have a full end-to-end solution for performing speech-to-text analysis, identifying the intent of the text, and reacting to the identified intent. Congratulations on sticking it out.</p>
+<p>I have a few more things to share, so you&#39;re not finished yet.</p>
+<blockquote>
+<p><strong>Final Challenge</strong></p>
+<p>With you understanding of the entire pipeline. Add some more Pokemon to the mix, and a few more intents. Source some new graphics, and update the deployed web app. </p>
+</blockquote>
+<p>### </p>
 
 			</div>
 			<hr>
