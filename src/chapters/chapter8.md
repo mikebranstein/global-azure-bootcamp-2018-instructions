@@ -60,22 +60,17 @@ Click the *Test* button and a sidebar will pop out. In the textbox, enter in sev
 Try these utterances:
 - Pikachu sit down.
 - Jigglypuff jump.
-- Stopbeing so lou
+- Stop being so loud Jigglypuff.
 
+<img src="images/chapter8/test.gif" class="img-override" />
 
- train your LUIS app, integrating intents and entities into the trained app model:
-
-<img src="images/chapter8/training.gif" class="img-override" />
-
-When training is finished, the *Train* button has a green dot:
-
-<img src="images/chapter8/train1.png" class="img-override" />
-
-That's it. It was easy.
+That's it for testing in the LUIS portal. 
 
 This concludes the exercise. 
 
 <div class="exercise-end"></div>
 
+With a tested LUIS app that you're satisfied with, let's move on to publishing your LUIS app.
 
-### Publishing a LUIS Endpoint
+### Publishing a LUIS App
+
