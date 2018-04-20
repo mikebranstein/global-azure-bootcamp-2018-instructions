@@ -325,7 +325,7 @@ Now, we have to be a bit careful, because it's easy to confuse your training and
 
 Start by locating the testing files we included in the workshop files. You'll find 6 .wav audio files in the *custom-speech-service-data/testing* folder:
 
-<img src="images/chapter3/files.ong" class="img-override" />
+<img src="images/chapter3/files.png" class="img-override" />
 
 Select the 6 audio files, zip them up, and name the zip file *testing-utterances.zip*.
 
