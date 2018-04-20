@@ -140,6 +140,19 @@ I have a few more things to share, so you're not finished yet.
 
 > **Final Challenge**
 >
-> With you understanding of the entire pipeline. Add some more Pokemon to the mix, and a few more intents. Source some new graphics, and update the deployed web app. 
+> With you understanding of the entire pipeline. Add some more Pokemon to the mix, and a few more intents. Source some new graphics, and update the deployed web app in Azure. 
 
-### 
+### Increasing LUIS Accuracy
+
+Earlier in the workshop, you learned how to use phrase lists to increase the accuracy of your LUIS app. But that's not the only way. LUIS has adaptive learning capabilities and the ability to update the trained LUIS model by validating the generated intent and entity hypothesis of queries it has processed.
+
+We're not going to cover this in the workshop, but you should check out the *Review endpoint utterances* area of your *Pokemon* app. 
+
+<img src="images/chapter9/review.png" class="img-override" />
+
+
+That's officially the end of the workshop. Thank you for your time! I hope you enjoyed learning some of the advanced artificial intelligence offerings on Azure!
+
+Go forth and build some modern apps!
+
+
