@@ -78,6 +78,17 @@ You can find additional lab materials and presentation content at the locations 
 There are several ways to get an Azure subscription, such as the free trial subscription, the pay-as-you-go subscription, which has no minimums or commitments and you can cancel any time; Enterprise agreement subscriptions, or you can buy one from a Microsoft retailer. In exercise, you'll create a free trial subscription.
 
 <h4 class="exercise-start">
+    <b>Exercise</b>: Create a Subscription with the Bootcamp Trial
+</h4>
+
+Browse to [https://aka.ms/gab18](https://aka.ms/gab18).
+
+Use the Azure Code on the handout you were given to get started.
+
+<div class="exercise-end"></div>
+
+
+<h4 class="exercise-start">
     <b>Exercise</b>: Create a Free Trial Subscription
 </h4>
 
