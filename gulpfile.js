@@ -5,7 +5,7 @@ var gulp = require( "gulp" ),
 	sass = require( "gulp-sass" ),
 	watch = require( "gulp-watch" ),
 	webServer = require( "gulp-webserver" ),
-	git = require("gul-git");
+	git = require("gulp-git");
 
 gulp.task( "default", [ "build", "server" ], function() {
 	gulp.watch( "./src/**/*", [ "build" ]);
