@@ -1,7 +1,5 @@
 ## Getting started in Azure
 
-All the code you'll need for working through the workshop are stored on Github at [https://github.com/mikebranstein/global-azure-bootcamp-2018](https://github.com/mikebranstein/global-azure-bootcamp-2018).
-
 ### Pre-requisites
 
 Before we go any further, be sure you have all the pre-requisites downloaded and installed. You'll need the following:
@@ -10,7 +8,10 @@ Before we go any further, be sure you have all the pre-requisites downloaded and
 * Evergreen web browser (Edge, Chrome, Firefox)
 * [Azure Subscription](https://azure.microsoft.com) (trial is ok, and you should have already done this in the chapter 0)
 * A Visual Studio Community edition VM running in Azure (see chapter 0 for setting this up)
-* The [bootcamp files](https://github.com/mikebranstein/global-azure-bootcamp-2018) on Github
+
+> **NOTE**
+>
+> If you've been following along, you should have all of these above items. 
 
 ### Organizing your resources in the Azure portal
 
