@@ -22,8 +22,7 @@ Our speakers include:
 
 To get started you'll need the following pre-requisites. Please take a few moments to ensure everything is installed and configured.
 
-* Microsoft Windows PC
-* [Visual Studio](https://www.visualstudio.com) 2017 or later
+* Microsoft Windows PC or Mac or Linux. Just have a laptop.
 * [Azure Subscription](https://azure.microsoft.com) (Trial is ok, or an Azure account linked to a Visual Studio subscription or MSDN account. See later sections of this chapter to create a free trial account or activate your Visual Studio subscription)
 
 ### What You're Building
