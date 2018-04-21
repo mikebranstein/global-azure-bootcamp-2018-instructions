@@ -69,13 +69,9 @@ You can find additional lab materials and presentation content at the locations 
 * Source code for the code used in this guide: [https://github.com/mikebranstein/global-azure-bootcamp-2018](https://github.com/mikebranstein/global-azure-bootcamp-2018)
 * This guide: [https://github.com/mikebranstein/global-azure-bootcamp-2018-instructions](https://github.com/mikebranstein/global-azure-bootcamp-2018-instructions/)
 
-### Creating a Trial Azure Subscription
+### Creating a Bootcamp Trial Subscription
 
-> **If you already have an Azure account** 
->
-> If you have an Azure account already, you can skip this section. If you have a Visual Studio subscription (formerly known as an MSDN account), you get free Azure dollars every month. Check out the next section for activating these benefits.
-
-There are several ways to get an Azure subscription, such as the free trial subscription, the pay-as-you-go subscription, which has no minimums or commitments and you can cancel any time; Enterprise agreement subscriptions, or you can buy one from a Microsoft retailer. In exercise, you'll create a free trial subscription.
+There are several ways to get an Azure subscription, such as the free trial subscription, the pay-as-you-go subscription, which has no minimums or commitments and you can cancel any time; Enterprise agreement subscriptions, or you can buy one from a Microsoft retailer. In this exercise, you'll create a trial subscription using the code you were given at the bootcamp.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Create a Subscription with the Bootcamp Trial
@@ -85,8 +81,18 @@ Browse to [https://aka.ms/gab18](https://aka.ms/gab18).
 
 Use the Azure Code on the handout you were given to get started.
 
+This concludes the exercise.
+
 <div class="exercise-end"></div>
 
+
+### Creating a Trial Azure Subscription
+
+> **If you already have an Azure account** 
+>
+> If you have an Azure account already, you can skip this section. If you have a Visual Studio subscription (formerly known as an MSDN account), you get free Azure dollars every month. Check out the next section for activating these benefits.
+
+There are several ways to get an Azure subscription, such as the free trial subscription, the pay-as-you-go subscription, which has no minimums or commitments and you can cancel any time; Enterprise agreement subscriptions, or you can buy one from a Microsoft retailer. In exercise, you'll create a free trial subscription.
 
 <h4 class="exercise-start">
     <b>Exercise</b>: Create a Free Trial Subscription
